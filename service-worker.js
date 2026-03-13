@@ -1,6 +1,6 @@
 // --- service-worker.js ---
 
-const CACHE_NAME = 'egg2026_12-03_11-16';
+const CACHE_NAME = 'egg2026_13-03_10-45';
 const FILES_TO_CACHE = [
   './',
   './index.html',
@@ -77,4 +77,5 @@ self.addEventListener('message', (evt) => {
   if (evt.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+
 });
