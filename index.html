@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
+  <title>egg-2026 — PWA</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#B4A0FF" />
+
+  <meta name="theme-color" content="#F3E8FF">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service worker registered'))
+      .catch(err => console.log('Service worker registration failed:', err));
+  }
+</script>
+
+<body>
+  <a id="top"></a>
+
+  <header class="header">
+    <div class="address">Spenerhaus, Kurt-Schumacher-Straße 23, 60311 Frankfurt am Main</div>
+
+    <!-- Header card (fixed 360 x 175) -->
+    <section class="event-card" aria-label="event card">
+      <div class="event-card-inner">
+        <h1 class="event-title">egg-2026</h1>
+        <div class="event-dates">June 04 - 07<br>Frankfurt am Main</div>
+      </div>
+
+      <!-- neutral egg (overlapping to the right) -->
+      <img src="images/neutral-egg.png" alt="" class="event-egg" />
+    </section>
+
+    <!-- calendar -->
+    <nav class="calendar" aria-label="calendar">
+      <button class="cal-btn" data-external="http://www.placeholder.com/day1"><span class="cal-day">Wed</span><span class="cal-date">03</span></button>
+      <button class="cal-btn" data-external="http://www.placeholder.com/day2"><span class="cal-day">Thu</span><span class="cal-date">04</span></button>
+      <button class="cal-btn" data-external="http://www.placeholder.com/day3"><span class="cal-day">Fri</span><span class="cal-date">05</span></button>
+      <button class="cal-btn" data-external="http://www.placeholder.com/day4"><span class="cal-day">Sat</span><span class="cal-date">06</span></button>
+      <button class="cal-btn" data-external="http://www.placeholder.com/day5"><span class="cal-day">Sun</span><span class="cal-date">07</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- information header row -->
+    <div class="information-header">
+      <h2 class="information-title">Information</h2>
+
+      <div class="guests-ticket-row">
+        <button id="guests-button" class="small-pill" data-external="https://dsc.3090.eu/t/participants-of-egg-2026-aka-infosheet-by-last-name/333">Participants</button>
+
+        <div class="ticket-wrap">
+          <button id="ticket-button" class="small-pill" type="button">Ticket</button>
+          <div id="ticket-menu" class="ticket-menu" role="menu" aria-hidden="true">
+            <button id="ticket-menu-view" role="menuitem">View</button>
+            <button id="ticket-menu-replace" role="menuitem">Replace</button>
+            <button id="ticket-menu-remove" role="menuitem">Remove</button>
+          </div>
+        </div>
+
+        <input id="ticket-input" type="file" accept="application/pdf,image/png,image/jpeg" style="display:none" />
+      </div>
+    </div>
+
+    <!-- 2-column groups grid: each column 175px (fixed heights as requested) -->
+    <section class="groups-grid" aria-label="information groups">
+      <div id="Get-there" class="group group--blue"">
+        <h3 class="group-title">Get there</h3>
+        <div class="btn-col">
+          <button class="nav-btn" data-external="https://maps.app.goo.gl/D5gTPKetWc2Ecu1c7">Navigate</button>
+          <button class="nav-btn" data-external="https://www.parkopedia.de/parking/locations/frankfurt_cgi8u0yjjd8bwqy3jc/?country=de&arriving=202606041300&leaving=202606071500">Parking</button>
+          <button class="nav-btn" data-internal="public-transport">Public transport</button>
+          <button class="nav-btn" data-internal="train">Train</button>
+          <button class="nav-btn" data-internal="airport">from Airport</button>
+          <button class="nav-btn" data-external="https://main-taxi-frankfurt.de/route/innenstadt_flughafen-frankfurt-fra/">Taxi FRA-City</button>
+        </div>
+      </div>
+
+      <div id="Frankfurt" class="group group--gold">
+        <h3 class="group-title">Frankfurt</h3>
+        <div class="btn-col">
+          <button class="nav-btn" data-external="https://frankfurt.de/themen/kultur/museen-und-kunst/museen-a-bis-z">Museums</button>
+          <button class="nav-btn" data-external="https://frankfurt.de/frankfurt-entdecken-und-erleben/sehenswuerdigkeiten">Places</button>
+          <button class="nav-btn" data-external="https://maps.app.goo.gl/VAHA77c8spBJxeHC7">Groceries</button>
+          <button class="nav-btn" data-external="https://www.visitfrankfurt.travel/en/experience/cuisine">Cuisine</button>
+          <button class="nav-btn" data-external="https://www.visitfrankfurt.travel/en/booking/round-tours/boat-trips">Boat trips</button>
+        </div>
+      </div>
+
+      <div id="Medicine" class="group group--indigo" style="height:223px;">
+        <h3 class="group-title group-title--white">Medicine</h3>
+
+        <div class="btn-col">
+            <div class="emergency-text">Emergency: 112</div>
+
+            <!-- internal navigation to the medical information sections -->
+            <button class="nav-btn" data-internal="physicians">Physician</button>
+            <button class="nav-btn" data-internal="pharmacies-section">Pharmacy</button>
+            <button class="nav-btn" data-internal="hospital-section">Hospital</button>
+        </div>
+        </div>
+
+      <div id="Germany" class="group group--pink">
+        <h3 class="group-title">Germany</h3>
+        <div class="btn-col">
+          <button class="nav-btn" data-external="https://www.how-to-germany.com/recycling-in-germany/">Recycling</button>
+          <button class="nav-btn" data-external="https://www.how-to-germany.com/pfand-in-germany/">Bottles</button>
+          <button class="nav-btn" data-external="https://n26.com/en-eu/blog/tipping-in-germany">Tipping</button>
+          <button class="nav-btn" data-external="https://www.germany-visa.org/insurances-germany/travel-insurance/">Health insurance</button>
+          <button class="nav-btn" data-external="https://www.zoll.de/EN/Private-individuals/Travel/Leaving-Germany/Tax-free-shopping/tax-free-shopping_node.html">Tax free</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- happy egg separator repeated for visual separation -->
+    <div class="happy-egg-wrap" aria-hidden="true" style="margin-top:3px;">
+      <img src="images/happy-egg.png" alt="" class="happy-egg" />
+    </div>
+
+    <!-- info cards (fixed width 360px each, specific heights) -->
+    <section class="info-cards">
+      <article id="public-transport" class="card" style="width:360px;height:340px;">
+        <p class="card-heading">Public transport</p>
+        <p class="card-subheading-bold">Nearest stop: <span class="card-subheading-strong">Börneplatz</span></p>
+        <ul class="card-list">
+          <li>Trams: 10, 11, 12, 14, 18</li>
+          <li>Bus: 30, M36</li>
+        </ul>
+        <p class="card-subheading-bold">300m stop: <span class="card-subheading-strong">Konstablerwache</span></p>
+        <ul class="card-list">
+          <li>S-train: S1, S2, S5, S6, S8, S9</li>
+          <li>Subway: U4, U5</li>
+        </ul>
+        <p class="card-subheading-bold">Buy ticket:</p>
+        <p class="card-link"><a class="string-link" data-key="rmv-app" href="https://www.rmv.de/c/en/shop/app-rmvgo" target="_blank" rel="noopener noreferrer">App RMV go</a></p>
+        <p class="card-link"><a class="string-link" data-key="rmv-machines" href="https://www.rmv.de/c/en/shop/more-purchase-options/rmv-ticket-machines" target="_blank" rel="noopener noreferrer">RMV ticket machines (how to)</a></p>
+      </article>
+
+      <article id="train" class="card" style="width:360px;height:320px;">
+        <p class="card-heading">Train stations → Venue</p>
+        <h4 class="card-subheading-strong">Frankfurt Hauptbahnhof (Hbf)</h4>
+        <ul class="card-list">
+          <li>Trams: 11, 12, 14 to Börneplatz</li>
+          <li>S-train: S1, S2, S5, S6, S8, S9 to Konstablerwache</li>
+          <li>Walk: 1.8 km</li>
+        </ul>
+        <h4 class="card-subheading-strong">Frankfurt Südbahnhof</h4>
+        <ul class="card-list">
+          <li>Tram: 18 to Börneplatz/Stoltzestr.</li>
+          <li>Bus: 30, M36 to Börneplatz</li>
+          <li>Walk: 1.5 km</li>
+        </ul>
+      </article>
+
+      <article id="airport" class="card" style="width:360px;height:360px;">
+        <p class="card-heading">FRA international airport</p>
+        <p class="card-subheading-strong">Airport regional train station</p>
+        <p class="card-link">
+            <a class="string-link" data-key="airport-map" href="https://map.frankfurt-airport.com/?poi=regionalbahnhof" target="_blank" rel="noopener noreferrer">See map here</a>
+        </p>
+        <p style="font-size:14px; font-weight:400; line-height:20px; margin-top:6px;">
+            The station is located in the underground level of Terminal 1 (Level 0). Follow the signs for Train stations S T.
+        </p>
+        <p class="card-subheading-bold" style="margin-top:8px;">S-train:</p>
+        <p style="font-size:16px; font-weight:600; line-height:20px; margin:4px 0 8px 0;">S8 or S9 to Konstablerwache</p>
+        <p class="card-subheading-bold">Taxi:</p>
+        <p style="font-size:16px; font-weight:600; line-height:20px; margin:4px 0 0 0;">about 20min / 45€</p>
+      </article>
+
+      <article id="medical-informations" class="card" style="width:360px;height:420px;">
+        <p class="card-heading">Medical informations</p>
+
+        <ul class="card-list medical-list">
+            <li>
+            <div id="physicians" class="medical-title">Physicians at egg:</div>
+            <ul class="card-list sub-list">
+                <li>Thorsten</li>
+                <li>xxx</li>
+                <li>yyy</li>
+            </ul>
+            </li>
+
+            <li>
+            <div class="medical-title">Medical practices in the evening, on weekends, and public holidays:</div>
+            <div style="margin-top:6px; line-height:20px;">
+                <a class="string-link" href="https://www.116117.de/de/englisch.php" target="_blank" rel="noopener noreferrer">on-call practices</a>
+                &nbsp;or dial <strong>116 117</strong>
+            </div>
+            </li>
+
+            <li>
+            <div id="pharmacies-section" class="medical-title">Pharmacies:</div>
+            <ul class="card-list sub-list" style="margin-top:6px;">
+                <li><a class="string-link" href="https://maps.app.goo.gl/DL49tjirWpbLyDRb9" target="_blank" rel="noopener noreferrer">Friday &amp; Saturday</a></li>
+                <li>
+                <span>On-call: </span>
+                <a class="string-link" href="https://www.apotheken.de/apotheken-und-notdienste-suchen" target="_blank" rel="noopener noreferrer">Thursday, Sunday, and evening / night</a>
+                </li>
+            </ul>
+            </li>
+
+            <li>
+            <div id="hospital-section" class="medical-title">Hospital (only emergencies)</div>
+            <div style="margin-top:6px; line-height:20px;">
+                <a class="string-link" href="https://unfallchirurgie-orthopaedie-frankfurt.de" target="_blank" rel="noopener noreferrer">Uniklinik Frankfurt</a>: tram 12 to Uniklinik
+            </div>
+            </li>
+
+            <li style="margin-top:6px; line-height:20px;">
+            <div style="font-weight:700;">In life-threatening situations call <span style="font-size:18px;">112</span></div>
+            </li>
+        </ul>
+        </article>
+
+    </section>
+  </main>
+
+  <!-- Back-to-top visible pill with egg and text -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" style="display:none">
+    <img src="images/top-egg.png" alt="" class="back-egg-icon" />
+    <span class="back-text">Back to top</span>
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-line">App developed by Viviana Müller, 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
