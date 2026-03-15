@@ -497,3 +497,6 @@ img, video, iframe, .happy-egg, .event-egg {
 #Information {
   margin-top: 6px;
 }
+
+/* hide per-page "back" links added to timeline pages */
+.back{ display:none !important; }
