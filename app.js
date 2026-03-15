@@ -313,7 +313,7 @@ async function loadWeather() {
       const code = days.weathercode[idx];
       const label = mapCode(code);
       // short weekday (English)
-      const weekday = new Date(dateISO + 'T00:00:00').toLocaleDateString('en-GB',{ weekday: 'short' });
+      const weekday = new Date(dateISO + 'T00:00:00').toLocaleDateString('en-GB',{ weekday: 'long' });
       return `${weekday}  ${label}  ${min}° / ${max}°`;
     }
 
