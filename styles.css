@@ -172,7 +172,7 @@ body{
 
 /* explicit heights per group to match Figma */
 #Get-there { height: 339px; }   /* Get there / Blue */
-#Frankfurt { height: 292px; }   /* Frankfurt / Gold */
+#Frankfurt { height: 339px; }   /* Frankfurt / Gold */
 #Medicine  { height: 223px; }   /* Medicine / Indigo */
 #Germany   { height: 294px; }   /* Germany / Pink */
 
