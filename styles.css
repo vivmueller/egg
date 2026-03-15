@@ -486,3 +486,14 @@ img, video, iframe, .happy-egg, .event-egg {
 .weather-line{
   margin: 0;
 }
+
+/* reduce spacing around weather */
+#calendar {
+  margin-bottom: 6px;
+}
+#weather-section {
+  margin: 2px 0;
+}
+#Information {
+  margin-top: 6px;
+}
