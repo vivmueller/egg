@@ -1,6 +1,6 @@
 // --- service-worker.js ---
 
-const CACHE_NAME = 'egg2026_15-03_15-50';
+const CACHE_NAME = 'egg2026_15-03_16-23';
 const FILES_TO_CACHE = [
   './',
   './index.html',
@@ -8,7 +8,12 @@ const FILES_TO_CACHE = [
   './app.js',
   './manifest.json',
   './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/icon-512.png',
+  './Wed-03.html',
+  './Thu-04.html',
+  './Fri-05.html',
+  './Sat-06.html',
+  './Sun-07.html'
 ];
 
 // install
