@@ -469,3 +469,22 @@ img, video, iframe, .happy-egg, .event-egg {
 @media (min-width: 980px) {
   .nav-btn { min-width: 150px; }
 }
+
+/* --- Weather widget --- */
+
+#weather-section{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#weather-widget{
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.weather-line{
+  margin: 2px 0;
+}
