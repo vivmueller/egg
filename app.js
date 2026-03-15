@@ -277,3 +277,70 @@ if (guestsBtn){
 
 /* Initialize: mark ticket button if stored */
 if (localStorage.getItem('egg_ticket_data')) ticketButton?.classList.add('has-ticket');
+
+// --- Weather widget loader (Open-Meteo) ---
+async function loadWeather() {
+  const lat = 50.1109;
+  const lon = 8.6821;
+  const elToday = document.getElementById('weather-today');
+  const elTomorrow = document.getElementById('weather-tomorrow');
+  if (!elToday || !elTomorrow) return;
+
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=2&timezone=Europe%2FBerlin`;
+
+  try {
+    const resp = await fetch(url, { cache: 'no-cache' });
+    if (!resp.ok) throw new Error('Weather API ' + resp.status);
+    const data = await resp.json();
+    const days = data.daily;
+    if (!days || !Array.isArray(days.time) || days.time.length === 0) throw new Error('No weather data');
+
+    function mapCode(code){
+      if (code === 0) return '☀️ Clear';
+      if (code >= 1 && code <= 3) return '⛅ Partly cloudy';
+      if (code >= 45 && code <= 48) return '🌫️ Fog';
+      if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return '🌧️ Rain';
+      if (code >= 71 && code <= 77) return '❄️ Snow';
+      if (code >= 95 && code <= 99) return '⛈️ Thunder';
+      if (code >= 4 && code <= 49) return '☁️ Cloudy';
+      return '🌤️ Mixed';
+    }
+
+    function renderText(idx){
+      const dateISO = days.time[idx];
+      const min = Math.round(days.temperature_2m_min[idx]);
+      const max = Math.round(days.temperature_2m_max[idx]);
+      const code = days.weathercode[idx];
+      const label = mapCode(code);
+      // short weekday (English)
+      const weekday = new Date(dateISO + 'T00:00:00').toLocaleDateString('en-GB',{ weekday: 'short' });
+      return `${weekday}  ${label}  ${min}° / ${max}°`;
+    }
+
+    // inject
+    elToday.textContent = renderText(0);
+    if (days.time.length > 1) {
+      elTomorrow.textContent = renderText(1);
+    } else {
+      elTomorrow.textContent = '';
+    }
+  } catch (err) {
+    // fail silently (no visual noise); useful console info for debugging
+    console.warn('Weather load failed:', err);
+    // keep previous content if any, otherwise clear
+    if (!elToday.textContent) elToday.textContent = '';
+    if (!elTomorrow.textContent) elTomorrow.textContent = '';
+  }
+}
+
+// --- How to call it ---
+// Option A: If you already have a DOMContentLoaded listener, call loadWeather() inside it.
+// Example (insert the call inside your existing listener):
+//   document.addEventListener('DOMContentLoaded', function(){ /* your init code */ loadWeather(); });
+
+// Option B: If you don't have one or prefer standalone, paste this just once at the end of app.js:
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadWeather, { once: true });
+} else {
+  loadWeather();
+}
