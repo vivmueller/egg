@@ -144,11 +144,11 @@ body{
   align-items:center;
   margin: 0; /
 }
-.info-pill{
-  font-size:14px;
-  font-weight:600; 
-  padding:6px 12px; 
-  border-radius:18px;
+.info-text{
+  font-size:16px;
+  font-weight:600;
+  padding:6px 4px; 
+  color:var(--dark-grey);
 }
 
 .small-pill{
