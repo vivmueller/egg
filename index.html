@@ -65,11 +65,11 @@
   <main>
     <!-- information header row -->
     <div class="information-header">
-      <h2 class="information-title">Information</h2>
-
       <div class="guests-ticket-row">
+        <button id="wiki-button" class="small-pill" data-external="https://wiki.3090.eu/2026/public/start">Wiki</button>
+    
         <button id="guests-button" class="small-pill" data-external="https://dsc.3090.eu/t/participants-of-egg-2026-aka-infosheet-by-last-name/333">Participants</button>
-
+    
         <div class="ticket-wrap">
           <button id="ticket-button" class="small-pill" type="button">Ticket</button>
           <div id="ticket-menu" class="ticket-menu" role="menu" aria-hidden="true">
@@ -78,10 +78,11 @@
             <button id="ticket-menu-remove" role="menuitem">Remove</button>
           </div>
         </div>
-
         <input id="ticket-input" type="file" accept="application/pdf,image/png,image/jpeg" style="display:none" />
       </div>
-    </div>
+      <h2 class="information-title">Information</h2>
+    </div>  
+
 
     <!-- 2-column groups grid: each column 175px (fixed heights as requested) -->
     <section class="groups-grid" aria-label="information groups">
