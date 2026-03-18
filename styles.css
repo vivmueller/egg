@@ -129,12 +129,29 @@ body{
   filter: drop-shadow(10px 5px 10px rgba(0,0,0,0.35));
 }
 
-/* Information header spacing */
-.information-header{ display:flex; align-items:center; justify-content:center; gap:14px; margin-top:12px; margin-bottom:14px; }
-.information-title{ font-size:20px; font-weight:600; line-height:20px; margin:0; }
+/* Information row */
+.information-header{
+  display:flex;
+  flex-direction:column;      /* stack: buttons first, title below */
+  align-items:flex-start;     /* left align */
+  gap:8px;
+  margin-top:12px;
+  margin-bottom:14px;
+}
+.guests-ticket-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin: 0; /* reset; visual padding comes from container */
+}
+.information-title{
+  font-size:20px;
+  font-weight:600;
+  line-height:20px;
+  margin:0;
+  padding-left:8px; /* same indentation as before */
+}
 
-/* Guests & Ticket gradient buttons with shadow */
-.guests-ticket-row{ display:flex; gap:8px; align-items:center; margin-left:8px;}
 .small-pill{
   font-size:16px; font-weight:300; line-height:20px;
   padding:8px 14px; border-radius:20px; border:1px solid rgba(0,0,0,0.06);
