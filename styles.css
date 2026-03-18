@@ -132,9 +132,9 @@ body{
 /* Information row */
 .information-header{
   display:flex;
-  flex-direction:column;      /* stack: buttons first, title below */
-  align-items:flex-start;     /* left align */
-  gap:8px;
+  justify-content:flex-start;
+  align-items:center;
+  gap:12px;
   margin-top:12px;
   margin-bottom:14px;
 }
@@ -142,14 +142,13 @@ body{
   display:flex;
   gap:8px;
   align-items:center;
-  margin: 0; /* reset; visual padding comes from container */
+  margin: 0; /
 }
-.information-title{
-  font-size:20px;
-  font-weight:600;
-  line-height:20px;
-  margin:0;
-  padding-left:8px; /* same indentation as before */
+.info-pill{
+  font-size:14px;
+  font-weight:600; 
+  padding:6px 12px; 
+  border-radius:18px;
 }
 
 .small-pill{
