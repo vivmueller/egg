@@ -499,13 +499,13 @@ img, video, iframe, .happy-egg, .event-egg {
 
 /* Fix: pills/buttons sizing so they don't overflow in small grids and don't look huge on desktop */
 .btn-col {
-  align-items: center; /* center pills inside the group cell */
+  align-items: stretch; /* center pills inside the group cell */
 }
 
 /* Use auto width with sensible min/max so pills adapt to cell size */
 .nav-btn {
-  width: auto !important;
-  min-width: 120px;
+  width: 100% !important;
+  min-width: 0;
   max-width: 100%;
   padding: 8px 14px;
   box-sizing: border-box;
