@@ -252,6 +252,7 @@ body{
   text-align:center;
   align-items:center; display:inline-flex; justify-content:center;
 }
+.group--indigo .nav-btn{background: rgba(255,255,255,0.8);}
 .nav-btn:hover{ background: rgba(255,255,255,0.65); }
 
 /* Info cards lower (fixed width 360px and heights as specified) */
