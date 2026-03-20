@@ -76,6 +76,18 @@ const ticketButton = document.getElementById('ticket-button');
 const ticketInput  = document.getElementById('ticket-input');
 const ticketMenu   = document.getElementById('ticket-menu');
 
+if (ticketMenu) {
+  document.addEventListener('click', (e) => {
+    if (!ticketMenu.contains(e.target) && e.target !== ticketButton) {
+      closeTicketMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTicketMenu();
+  });
+}
+
 function setTicketState() {
   const hasTicket = !!localStorage.getItem('egg_ticket_data');
   ticketButton?.classList.toggle('has-ticket', hasTicket);
@@ -84,6 +96,7 @@ function setTicketState() {
 function closeTicketMenu() {
   if (!ticketMenu) return;
   ticketMenu.setAttribute('aria-hidden', 'true');
+  ticketMenu.style.display = 'none';
 }
 
 function openTicketMenu() {
