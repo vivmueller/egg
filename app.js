@@ -69,71 +69,155 @@ document.addEventListener('click', e => {
   }
 });
 
+/*--------------------------*/
+
 /* Ticket logic */
 const ticketButton = document.getElementById('ticket-button');
-const ticketInput = document.getElementById('ticket-input');
-const ticketMenu = document.getElementById('ticket-menu');
+const ticketInput  = document.getElementById('ticket-input');
+const ticketMenu   = document.getElementById('ticket-menu');
 
-/* Shows ticket in overlay and can be closed */
-function viewTicket(){
+function setTicketState() {
+  const hasTicket = !!localStorage.getItem('egg_ticket_data');
+  ticketButton?.classList.toggle('has-ticket', hasTicket);
+}
+
+function closeTicketMenu() {
+  if (!ticketMenu) return;
+  ticketMenu.setAttribute('aria-hidden', 'true');
+}
+
+function openTicketMenu() {
+  if (!ticketMenu) return;
+
+  // Force visible styling so CSS conflicts cannot break the menu
+  ticketMenu.style.display = 'flex';
+  ticketMenu.style.flexDirection = 'column';
+  ticketMenu.style.position = 'absolute';
+  ticketMenu.style.top = '44px';
+  ticketMenu.style.right = '0';
+  ticketMenu.style.minWidth = '140px';
+  ticketMenu.style.background = '#fff';
+  ticketMenu.style.borderRadius = '8px';
+  ticketMenu.style.boxShadow = '0 6px 20px rgba(0,0,0,0.12)';
+  ticketMenu.style.padding = '6px';
+  ticketMenu.style.zIndex = '9999';
+
+  ticketMenu.setAttribute('aria-hidden', 'false');
+}
+
+function toggleTicketMenu() {
+  if (!ticketMenu) return;
+  const opened = ticketMenu.getAttribute('aria-hidden') === 'false';
+  if (opened) closeTicketMenu();
+  else openTicketMenu();
+}
+
+function replaceTicket() {
+  closeTicketMenu();
+  if (!ticketInput) return;
+  ticketInput.value = '';
+  ticketInput.click();
+}
+
+function removeTicket() {
+  if (!confirm('Remove saved ticket?')) return;
+
+  localStorage.removeItem('egg_ticket_data');
+  localStorage.removeItem('egg_ticket_name');
+  setTicketState();
+  closeTicketMenu();
+  alert('Ticket removed.');
+}
+
+function viewTicket() {
   const data = localStorage.getItem('egg_ticket_data');
-  if (!data) return alert('No ticket saved.');
+  if (!data) {
+    alert('No ticket saved.');
+    return;
+  }
 
-  // If overlay already exists, just reopen it and update content
+  closeTicketMenu();
+
   let overlay = document.getElementById('egg-ticket-overlay');
-  if (overlay){
-    overlay.style.display = 'flex';
-    const sheet = overlay.querySelector('.egg-ticket-inner');
-    // remove previous content (img or iframe) but keep the close button
-    const prev = sheet.querySelector('.egg-ticket-content');
-    if (prev) prev.remove();
+
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'egg-ticket-overlay';
+    overlay.style.cssText = [
+      'position:fixed',
+      'inset:0',
+      'display:flex',
+      'align-items:center',
+      'justify-content:center',
+      'background:rgba(0,0,0,0.6)',
+      'z-index:9999',
+      'padding:20px'
+    ].join(';');
+
+    const sheet = document.createElement('div');
+    sheet.className = 'egg-ticket-inner';
+    sheet.style.cssText = [
+      'background:#fff',
+      'border-radius:10px',
+      'max-width:980px',
+      'width:100%',
+      'max-height:90vh',
+      'overflow:hidden',
+      'position:relative',
+      'display:flex',
+      'flex-direction:column',
+      'align-items:center'
+    ].join(';');
+
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.innerText = '✕';
+    close.title = 'Close ticket';
+    close.style.cssText = [
+      'position:absolute',
+      'right:8px',
+      'top:8px',
+      'border:0',
+      'background:transparent',
+      'font-size:20px',
+      'cursor:pointer'
+    ].join(';');
+    close.addEventListener('click', () => {
+      overlay.style.display = 'none';
+    });
 
     const contentWrapper = document.createElement('div');
     contentWrapper.className = 'egg-ticket-content';
     contentWrapper.style.cssText = 'width:100%;display:flex;align-items:center;justify-content:center;';
 
-    if (data.startsWith('data:image/')){
-      const img = document.createElement('img');
-      img.src = data;
-      img.style.cssText = 'max-width:100%;max-height:80vh;object-fit:contain;';
-      contentWrapper.appendChild(img);
-    } else {
-      const ifr = document.createElement('iframe');
-      ifr.src = data;
-      ifr.style.cssText = 'border:0;width:100%;height:80vh;';
-      contentWrapper.appendChild(ifr);
-    }
-    sheet.insertBefore(contentWrapper, sheet.firstChild);
-    return;
+    sheet.appendChild(contentWrapper);
+    sheet.appendChild(close);
+    overlay.appendChild(sheet);
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) overlay.style.display = 'none';
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.style.display !== 'none') {
+        overlay.style.display = 'none';
+      }
+    });
+
+    document.body.appendChild(overlay);
   }
 
-  // create overlay
-  overlay = document.createElement('div');
-  overlay.id = 'egg-ticket-overlay';
-  overlay.style.cssText = [
-    'position:fixed','inset:0','display:flex','align-items:center','justify-content:center',
-    'background:rgba(0,0,0,0.6)','z-index:9999','padding:20px'
-  ].join(';');
+  overlay.style.display = 'flex';
 
-  // inner sheet
-  const sheet = document.createElement('div');
-  sheet.className = 'egg-ticket-inner';
-  sheet.style.cssText = 'background:#fff;border-radius:10px;max-width:980px;width:100%;max-height:90vh;overflow:hidden;position:relative;display:flex;flex-direction:column;align-items:center;';
+  const sheet = overlay.querySelector('.egg-ticket-inner');
+  const prev = overlay.querySelector('.egg-ticket-content');
+  if (prev) prev.remove();
 
-  // close button
-  const close = document.createElement('button');
-  close.type = 'button';
-  close.innerText = '✕';
-  close.title = 'Close ticket';
-  close.style.cssText = 'position:absolute;right:8px;top:8px;border:0;background:transparent;font-size:20px;cursor:pointer;';
-  close.addEventListener('click', ()=> overlay.style.display = 'none');
-
-  // content wrapper
   const contentWrapper = document.createElement('div');
   contentWrapper.className = 'egg-ticket-content';
   contentWrapper.style.cssText = 'width:100%;display:flex;align-items:center;justify-content:center;';
 
-  if (data.startsWith('data:image/')){
+  if (data.startsWith('data:image/')) {
     const img = document.createElement('img');
     img.src = data;
     img.style.cssText = 'max-width:100%;max-height:80vh;object-fit:contain;';
@@ -145,93 +229,89 @@ function viewTicket(){
     contentWrapper.appendChild(ifr);
   }
 
-  sheet.appendChild(contentWrapper);
-  sheet.appendChild(close);
-  overlay.appendChild(sheet);
-
-  // clicking backdrop closes
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.style.display = 'none';
-  });
-
-  // Escape to close
-  document.addEventListener('keydown', function escHandler(e){
-    if (e.key === 'Escape'){
-      if (overlay.style.display !== 'none') overlay.style.display = 'none';
-    }
-  });
-
-  document.body.appendChild(overlay);
+  sheet.insertBefore(contentWrapper, sheet.firstChild);
 }
 
-function replaceTicket(){
-  if (ticketInput){ ticketInput.value=''; ticketInput.click(); }
-}
-function removeTicket(){
-  if (!confirm('Remove saved ticket?')) return;
-  localStorage.removeItem('egg_ticket_data');
-  localStorage.removeItem('egg_ticket_name');
-  ticketButton?.classList.remove('has-ticket');
-  alert('Ticket removed.');
-  if (ticketMenu) ticketMenu.setAttribute('aria-hidden','true');
-}
-
-if (ticketInput){
-  ticketInput.addEventListener('change', function(){
+if (ticketInput) {
+  ticketInput.addEventListener('change', function () {
     const f = this.files && this.files[0];
     if (!f) return;
-    if (f.size > 10 * 1024 * 1024){ alert('File too large. Max 10MB.'); this.value=''; return; }
+
+    if (f.size > 10 * 1024 * 1024) {
+      alert('File too large. Max 10MB.');
+      this.value = '';
+      return;
+    }
+
     const reader = new FileReader();
-    reader.onload = function(ev){
+    reader.onload = function (ev) {
       localStorage.setItem('egg_ticket_data', ev.target.result);
       localStorage.setItem('egg_ticket_name', f.name);
-      ticketButton?.classList.add('has-ticket');
+      setTicketState();
       alert('Ticket saved locally.');
     };
     reader.readAsDataURL(f);
   }, { passive: true });
 }
 
-if (ticketButton){
-  ticketButton.addEventListener('click', function(ev){
+if (ticketButton) {
+  ticketButton.addEventListener('click', function (ev) {
     const hasTicket = !!localStorage.getItem('egg_ticket_data');
 
-    // Shift click = remove
-    if (ev.shiftKey){
+    if (ev.shiftKey) {
       if (hasTicket) removeTicket();
       else alert('No ticket to remove.');
       return;
     }
-    // Ctrl/Cmd click = replace
-    if (ev.ctrlKey || ev.metaKey){
+
+    if (ev.ctrlKey || ev.metaKey) {
       replaceTicket();
       return;
     }
-    // No ticket: open picker
-    if (!hasTicket){
+
+    if (!hasTicket) {
       replaceTicket();
       return;
     }
-    // With ticket: toggle floating menu
-    if (!ticketMenu){ viewTicket(); return; }
-    const opened = ticketMenu.getAttribute('aria-hidden') === 'false';
-    ticketMenu.setAttribute('aria-hidden', opened ? 'true' : 'false');
+
+    if (!ticketMenu) {
+      viewTicket();
+      return;
+    }
+
+    toggleTicketMenu();
+    ev.stopPropagation();
   });
-}
-if (ticketMenu){
-  ticketMenu.addEventListener('click', function(e){
-    const id = e.target.id;
-    if (!id) return;
-    if (id === 'ticket-menu-view'){ ticketMenu.setAttribute('aria-hidden','true'); viewTicket(); }
-    if (id === 'ticket-menu-replace'){ ticketMenu.setAttribute('aria-hidden','true'); replaceTicket(); }
-    if (id === 'ticket-menu-remove'){ ticketMenu.setAttribute('aria-hidden','true'); removeTicket(); }
-  });
-  document.addEventListener('click', (e) => {
-    if (!ticketMenu.contains(e.target) && e.target !== ticketButton) ticketMenu.setAttribute('aria-hidden','true');
-  });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') ticketMenu.setAttribute('aria-hidden','true'); });
 }
 
+if (ticketMenu) {
+  ticketMenu.addEventListener('click', function (e) {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+
+    if (btn.id === 'ticket-menu-view') {
+      viewTicket();
+    } else if (btn.id === 'ticket-menu-replace') {
+      replaceTicket();
+    } else if (btn.id === 'ticket-menu-remove') {
+      removeTicket();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!ticketMenu.contains(e.target) && e.target !== ticketButton) {
+      closeTicketMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTicketMenu();
+  });
+}
+
+setTicketState();
+
+/*--------------------------*/
 /* Back-to-top logic (based on happy-egg separator) */
 const backBtn = document.getElementById('back-to-top');
 const happyEggWrap = document.querySelector('.happy-egg-wrap');
@@ -334,11 +414,6 @@ async function loadWeather() {
 }
 
 // --- How to call it ---
-// Option A: If you already have a DOMContentLoaded listener, call loadWeather() inside it.
-// Example (insert the call inside your existing listener):
-//   document.addEventListener('DOMContentLoaded', function(){ /* your init code */ loadWeather(); });
-
-// Option B: If you don't have one or prefer standalone, paste this just once at the end of app.js:
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', loadWeather, { once: true });
 } else {
