@@ -403,7 +403,7 @@ async function loadWeather() {
       const dateISO = days.time[idx];
       const min = Math.round(days.temperature_2m_min[idx]);
       const max = Math.round(days.temperature_2m_max[idx]);
-      const code = days.weathercode[idx];
+      const code = days.weather_code[idx];
       const label = mapCode(code);
       // short weekday (English)
       const weekday = new Date(dateISO + 'T00:00:00').toLocaleDateString('en-GB',{ weekday: 'long' });
