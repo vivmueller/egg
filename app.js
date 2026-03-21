@@ -379,7 +379,7 @@ async function loadWeather() {
   const elTomorrow = document.getElementById('weather-tomorrow');
   if (!elToday || !elTomorrow) return;
 
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weathercode&forecast_days=2&timezone=Europe%2FBerlin`;
+  const url = `https://api.open-meteo.com/v1/dwd-icon?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=2&timezone=Europe%2FBerlin`;
 
   try {
     const resp = await fetch(url, { cache: 'no-cache' });
