@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Program for Wednesday 03-June-2026</title>
+  <title>Wednesday 03-June-2026</title>
 
   <style>
     body {
@@ -48,7 +48,8 @@
 
 <body>
   <div class="container">
-    ./index.html← Back</a>
+    <a class="backBack</a>
+
     <h1>Program for Wednesday 03‑June‑2026</h1>
 
     <table class="timeline" aria-label="Wednesday program">
@@ -64,15 +65,16 @@
         tbody.innerHTML = '';
 
         data.items.forEach(item => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td class="time">${item.time}</td>
-            <td class="event">${item.description}</td>
-          `;
-          tbody.appendChild(row);
+          const tr = document.createElement('tr');
+
+          tr.innerHTML =
+            '<td class="time">' + item.time + '</td>' +
+            '<td class="event">' + item.description + '</td>';
+
+          tbody.appendChild(tr);
         });
       })
-      .catch(err => console.error('Failed to load timeline', err));
+      .catch(err => console.error(err));
   </script>
 </body>
 </html>
