@@ -1,52 +1,77 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Programm for Thursday 04-June-2026</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programme for Thursday 04-June-2026</title>
+
   <style>
-    body{font-family:Inter, system-ui, Arial, sans-serif;padding:20px;background:#fff;color:#222}
-    .container{max-width:980px;margin:0 auto}
-    h1{font-size:1.25rem;margin:0 0 12px}
-    .back{margin-bottom:12px;display:inline-block}
-    table.timeline{width:100%;border-collapse:collapse}
-    table.timeline td{border:1px solid #e0e0e0;padding:10px;vertical-align:top}
-    table.timeline td.time{width:110px;white-space:nowrap;font-weight:600}
-    table.timeline td.event{}
-    @media(max-width:600px){ table.timeline td.time{width:90px} }
+    body {
+      font-family: Inter, system-ui, Arial, sans-serif;
+      padding: 20px;
+      background: #fff;
+      color: #222;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+    }
+    .back {
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    table.timeline {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table.timeline td {
+      border: 1px solid #e0e0e0;
+      padding: 10px;
+      vertical-align: top;
+    }
+    table.timeline td.time {
+      width: 110px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      table.timeline td.time {
+        width: 90px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <a class="back" href="./index.html">← Back</a>
-    <h1>Programm for Thursday 04-June-2026</h1>
+    <h1>Programme for Thursday 04‑June‑2026</h1>
 
-    <table class="timeline" role="presentation" aria-label="Thursday program">
-      <tbody>
-        <tr>
-          <td class="time">14:00</td>
-          <td class="event">
-            <strong>Door opens</strong><br>
-            Samgar, Thorsten and the check-in volunteers will be at the venue and wait for everyone to arrive.<br>
-            The idea for Thursday is to do very little, but to be there as people arrive. Usually this works out well as the participants can sit, socialize, and have a good time.<br>
-            Corpus Christi is a public holiday, so while many restaurants etc. will be open, shops will be generally closed.<br> 
-            To make sure that nobody is starving, we provide drinks and food.
-          </td>
-        </tr>
-
-        <tr>
-          <td class="time">22:00</td>
-          <td class="event">
-            <strong>Door closes</strong><br>
-            We'll call it a day at 22:00h. The old Blues Brothers rule applies:
-            “You don't have to go home but you can't stay here.”
-          </td>
-        </tr>
-      </tbody>
+    <table class="timeline" aria-label="Thursdayday program">
+      <tbody id="timeline-body"></tbody>
     </table>
   </div>
 
-  <script src="./app.js"></script>
+  <script>
+    fetch('https://script.google.com/macros/s/AKfycbx_1ZgtsyNvdcd027rrZlbDclPffinsDBxIOhoJL_fsNvce86Deid4WFibcHOjmX6pyNg/exec?day=Thu-04')
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('timeline-body');
+        tbody.innerHTML = '';
+
+        data.items.forEach(item => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="time">${item.time}</td>
+            <td class="event">${item.description}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      })
+      .catch(err => console.error('Failed to load timeline', err));
+  </script>
 </body>
 </html>
