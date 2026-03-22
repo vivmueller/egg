@@ -1,6 +1,6 @@
 // --- service-worker.js ---
 
-const CACHE_NAME = 'egg2026_21-03_10-15';
+const CACHE_NAME = 'egg2026_22-03_14-30';
 const FILES_TO_CACHE = [
   './',
   './index.html',
