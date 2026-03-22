@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Programm for Wednesday 03-June-2026</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Program for Wednesday 03-June-2026</title>
+  <link relcss
   <style>
     body{font-family:Inter, system-ui, Arial, sans-serif;padding:20px;background:#fff;color:#222}
     .container{max-width:980px;margin:0 auto}
@@ -17,21 +17,42 @@
     @media(max-width:600px){ table.timeline td.time{width:90px} }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <a class="back" href="./index.html">← Back</a>
-    <h1>Programm for Wednesday 03-June-2026</h1>
+    ./index.html← Back</a>
+    <h1>Program for Wednesday 03-June-2026</h1>
 
     <table class="timeline" role="presentation" aria-label="Wednesday program">
-      <tbody>
-        <tr>
-          <td class="time">18:00</td>
-          <td class="event">Restaurant tbd</td>
-        </tr>
+      <tbody id="timeline-body">
+        <!-- rows will be inserted here -->
       </tbody>
     </table>
   </div>
 
-  <script src="./app.js"></script>
+  <script>
+    const API_URL = 'https://script.google.com/macros/s/AKfycbx_1ZgtsyNvdcd027rrZlbDclPffinsDBxIOhoJL_fsNvce86Deid4WFibcHOjmX6pyNg/exec?day=Wed-03';
+
+    fetch(API_URL)
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('timeline-body');
+        tbody.innerHTML = '';
+
+        data.items.forEach(item => {
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td class="time">${item.time}</td>
+            <td class="event">${item.description}</td>
+          `;
+
+          tbody.appendChild(row);
+        });
+      })
+      .catch(err => {
+        console.error('Timeline load failed', err);
+      });
+  </script>
 </body>
 </html>
