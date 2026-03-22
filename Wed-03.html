@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Program for Wednesday 03-June-2026</title>
-  <link relcss
+  ./styles.css
   <style>
     body{font-family:Inter, system-ui, Arial, sans-serif;padding:20px;background:#fff;color:#222}
     .container{max-width:980px;margin:0 auto}
@@ -24,34 +24,25 @@
     <h1>Program for Wednesday 03-June-2026</h1>
 
     <table class="timeline" role="presentation" aria-label="Wednesday program">
-      <tbody id="timeline-body">
-        <!-- rows will be inserted here -->
-      </tbody>
+      <tbody id="timeline-body"></tbody>
     </table>
   </div>
 
   <script>
-    const API_URL = 'https://script.google.com/macros/s/AKfycbx_1ZgtsyNvdcd027rrZlbDclPffinsDBxIOhoJL_fsNvce86Deid4WFibcHOjmX6pyNg/exec?day=Wed-03';
+    const API_URL = 'YOUR_APPS_SCRIPT_URL_HERE?day=Wed-03';
 
     fetch(API_URL)
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
         const tbody = document.getElementById('timeline-body');
-        tbody.innerHTML = '';
-
         data.items.forEach(item => {
-          const row = document.createElement('tr');
-
-          row.innerHTML = `
-            <td class="time">${item.time}</td>
-            <td class="event">${item.description}</td>
-          `;
-
-          tbody.appendChild(row);
+          tbody.insertAdjacentHTML('beforeend', `
+            <tr>
+              <td class="time">${item.time}</td>
+              <td class="event">${item.description}</td>
+            </tr>
+          `);
         });
-      })
-      .catch(err => {
-        console.error('Timeline load failed', err);
       });
   </script>
 </body>
