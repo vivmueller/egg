@@ -49,13 +49,14 @@
 <body>
   <div class="container">
     <h1>Programme for Friday 05‑June‑2026</h1>
-
+    <div id="timeline-loading">Loading table...</div>
     <table class="timeline" aria-label="Friday program">
       <tbody id="timeline-body"></tbody>
     </table>
   </div>
 
   <script>
+    const loading = document.getElementById('timeline-loading');
     fetch('https://script.google.com/macros/s/AKfycbx_1ZgtsyNvdcd027rrZlbDclPffinsDBxIOhoJL_fsNvce86Deid4WFibcHOjmX6pyNg/exec?day=Fri-05')
       .then(response => response.json())
       .then(data => {
@@ -70,6 +71,7 @@
           `;
           tbody.appendChild(row);
         });
+        if (loading) loading.style.display = 'none';
       })
       .catch(err => console.error('Failed to load timeline', err));
   </script>
