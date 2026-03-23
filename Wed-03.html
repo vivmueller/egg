@@ -49,13 +49,15 @@
 <body>
   <div class="container">
     <h1>Programme for Wednesday 03‑June‑2026</h1>
-
+     <div id="timeline-loading">Loading table... please wait</div>
+    
     <table class="timeline" aria-label="Wednesday program">
       <tbody id="timeline-body"></tbody>
     </table>
   </div>
 
   <script>
+    const loading = document.getElementById('timeline-loading');
     fetch('https://script.google.com/macros/s/AKfycbx_1ZgtsyNvdcd027rrZlbDclPffinsDBxIOhoJL_fsNvce86Deid4WFibcHOjmX6pyNg/exec?day=Wed-03')
       .then(response => response.json())
       .then(data => {
