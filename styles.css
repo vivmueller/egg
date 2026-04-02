@@ -28,7 +28,6 @@ body{
 }
 
 /* Containers */
-/* make containers responsive: allow full width up to a max desktop width */
 .header, main {
   width: 100%;
   max-width: 980px;
@@ -38,11 +37,10 @@ body{
 
 /* center header content (address + calendar) ---- */
 .header{
-  /* keep the page centered and allow it to shrink on small screens */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;    /* center children horizontally */
+  align-items: center;  
   padding: 12px;
 }
 
@@ -52,17 +50,16 @@ body{
   margin: 6px 0 8px 0;
 }
 
-/* center the calendar row and ensure tiles are centered */
+/* center the calendar row and tiles */
 .calendar{
   margin: 14px auto;
-  justify-content: center;   /* center flex items */
-  display:flex;              /* ensure flex for justify-content */
+  justify-content: center; 
+  display:flex;  
   gap:6px;
   -webkit-overflow-scrolling: touch;
-  overflow-x: auto;          /* keep horizontal scroll fallback if needed */
+  overflow-x: auto;  
 }
 
-/* ensure individual calendar buttons do not introduce extra left alignment */
 .cal-btn{
   margin: 0;
   flex: 0 0 auto;
@@ -71,7 +68,7 @@ body{
 /* Address */
 .address{ font-size:14px; margin-top:12px; color:#666; }
 
-/* Header card - fixed W360 x H175 (kept visual size but responsive wrapper above) */
+/* Header card - fixed W360 x H175 */
 .event-card{
   width:360px;
   height:175px;
@@ -87,7 +84,7 @@ body{
 .event-title{ font-size:36px; font-weight:700; margin:0 0 6px 0; }
 .event-dates{ font-size:16px; font-weight:700; line-height:20px; }
 
-/* neutral egg - keep it decorative but prevent it from overflowing the page */
+/* neutral egg */
 .event-egg{
   position:absolute;
   right: 12px;      /* anchor to the right edge of the card */
@@ -161,7 +158,7 @@ body{
   box-shadow: 0 4px 4px rgba(0,0,0,0.25);
 }
 
-/* small green dot on Ticket if saved (no layout change) */
+/* small green dot on Ticket if saved */
 .small-pill.has-ticket{ position:relative; }
 .small-pill.has-ticket::after{
   content:''; position:absolute; top:6px; right:8px; width:8px; height:8px; border-radius:50%; background:#4CAF50;
@@ -224,13 +221,13 @@ body{
   margin-bottom:18px;
 }
 
-/* explicit heights per group to match Figma */
+/* explicit heights per group */
 #Get-there { height: 339px; }   /* Get there / Blue */
 #Frankfurt { height: 339px; }   /* Frankfurt / Gold */
 #Medicine  { height: 223px; }   /* Medicine / Indigo */
 #Germany   { height: 294px; }   /* Germany / Pink */
 
-/* ensure group content doesn't overflow visually */
+/* group content doesn't overflow */
 .group { overflow: hidden; }
 
 /* Group boxes and titles */
@@ -241,7 +238,7 @@ body{
 .group--pink{ background-color:var(--pink); color:var(--dark-grey); }
 .group-title{ font-size:16px; font-weight:600; margin:0; }
 
-/* nav pills inside groups: exact pill size 150 x 36 (visually) */
+/* nav pills inside groups */
 .btn-col{ display:flex; flex-direction:column; gap:10px; }
 .nav-btn{
   width:150px; height:36px;
@@ -255,7 +252,7 @@ body{
 .group--indigo .nav-btn{background: rgba(255,255,255,0.8);}
 .nav-btn:hover{ background: rgba(255,255,255,0.65); }
 
-/* Info cards lower (fixed width 360px and heights as specified) */
+/* Info cards lower */
 .info-cards{ display:flex; flex-direction:column; gap:12px; margin:18px auto 120px; align-items:center; }
 .card{
   width:360px;
@@ -316,9 +313,9 @@ body{
 :focus-visible{ outline:3px solid rgba(0,0,0,0.06); outline-offset:2px; }
 html{ scroll-behavior:smooth; }
 
-/* -------- Responsive adjustments and safety rules (minimal & targeted) -------- */
+/* -------- Responsive adjustments and safety rules -------- */
 
-/* Make images and media responsive so they can't push the page width */
+/* images and media responsive */
 img, video, iframe, .happy-egg, .event-egg {
   display:block;
   max-width:100%;
@@ -372,21 +369,19 @@ img, video, iframe, .happy-egg, .event-egg {
   .card { width: 100%; max-width: 100%; }
 }
 
-/* ----- small tweaks: neutral egg size/position + two-column groups on phones ----- */
-
-/* Make the decorative neutral egg smaller and position it over the left part of the lila card */
+/* neutral egg smaller and position  */
 .event-egg {
   right: 20px  !important;
-  left: auto !important;        /* anchor it toward the left side of the card */
-  top: -10px !important;        /* vertical overlap amount */
-  max-width: 70% !important;    /* scale down to ~70% of card width */
+  left: auto !important; 
+  top: -10px !important; 
+  max-width: 70% !important; 
   width: auto !important;
   height: auto !important;
-  z-index: 5 !important;        /* keep egg above other content */
+  z-index: 5 !important; 
   transform: none !important;
 }
 
-/* Ensure the egg doesn't push layout horizontally */
+/* egg doesn't push layout horizontally */
 .event-card { overflow: visible; }
 
 /* Force groups into two columns for typical phone widths and up,
@@ -412,17 +407,17 @@ img, video, iframe, .happy-egg, .event-egg {
   box-sizing: border-box;
 }
 
-/* ---------- tweak: neutral egg final position + responsive scaling ---------- */
+/* neutral egg final position + responsive scaling  */
 .event-egg {
-  left: 18px !important;       /* anchor left over the lila card */
+  left: 18px !important; 
   right: auto !important;
-  top: -18px !important;       /* small vertical overlap */
-  max-width: 120px !important; /* fixed sensible size on phones */
+  top: -18px !important; 
+  max-width: 120px !important;
   width: auto !important;
   height: auto !important;
   z-index: 6 !important;
   transform: none !important;
-  pointer-events: none;        /* avoid accidental interaction */
+  pointer-events: none; 
 }
 
 /* very small phones: shrink a bit more */
@@ -443,11 +438,10 @@ img, video, iframe, .happy-egg, .event-egg {
   }
 }
 
-/* ---------- constrain the groups grid on wide viewports so columns don't stretch ---------- */
 /* keep two fixed columns visually centered up from ~700px */
 .groups-grid {
   width: 100%;
-  max-width: 380px;     /* two 175px columns + gap fit within 380px */
+  max-width: 380px;  
   margin: 0 auto 18px;
   justify-content: center;
   box-sizing: border-box;
@@ -471,9 +465,9 @@ img, video, iframe, .happy-egg, .event-egg {
 /* Neutral egg positioning and scaling */
 .event-egg {
   left: auto !important;
-  right: 22px !important;      /* anchor to right edge of card */
-  top: -42px !important;       /* lift egg so head reaches top of purple card */
-  width: 140px !important;     /* base size for phones */
+  right: 22px !important; 
+  top: -42px !important;   
+  width: 140px !important;  
   height: auto !important;
   max-width: none !important;
   z-index: 6 !important;
@@ -483,7 +477,7 @@ img, video, iframe, .happy-egg, .event-egg {
 /* small phones */
 @media (max-width: 420px) {
   .event-egg {
-    width: 220px !important;   /* size of header-egg on small phones */
+    width: 220px !important;  
     right: -35px !important;
     top: -85px !important;
   }
@@ -498,12 +492,12 @@ img, video, iframe, .happy-egg, .event-egg {
   }
 }
 
-/* Fix: pills/buttons sizing so they don't overflow in small grids and don't look huge on desktop */
+/* pills/buttons  don't overflow in small grids and don't look huge on desktop */
 .btn-col {
-  align-items: stretch; /* center pills inside the group cell */
+  align-items: stretch; 
 }
 
-/* Use auto width with sensible min/max so pills adapt to cell size */
+/* auto width with sensible min/max so pills adapt to cell size */
 .nav-btn {
   width: 100% !important;
   min-width: 0;
@@ -520,7 +514,7 @@ img, video, iframe, .happy-egg, .event-egg {
   .nav-btn { min-width: 100px; padding: 8px 10px; }
 }
 
-/* Larger min width on wide desktop so they keep the intended visual size */
+/* Larger min width on wide desktop */
 @media (min-width: 980px) {
   .nav-btn { min-width: 150px; }
 }
