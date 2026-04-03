@@ -64,12 +64,16 @@ document.addEventListener('click', e => {
   const int = btn.dataset.internal;
   if (ext){ safeOpen(ext); return; }
   if (int){
-    const el = document.getElementById(int);
-    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+  // if it's a page → navigate
+  if (int.endsWith('.html')) {
+    window.location.href = int;
+    return;
+  }
+  // otherwise → scroll
+  const el = document.getElementById(int);
+  if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
   }
 });
-
-/*--------------------------*/
 
 /* Ticket logic */
 const ticketButton = document.getElementById('ticket-button');
