@@ -555,18 +555,18 @@ img, video, iframe, .happy-egg, .event-egg {
   position: fixed;
   top: 12px;
   right: 12px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;   
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
-  color: #333;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  color: #FFFFFF;    
+  background: #B4A0FF; 
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   z-index: 1000;
 }
