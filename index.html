@@ -6,9 +6,14 @@
 -->
 <html>
 	<head>
-		<title>egg ‧ 2027</title>
+		<title>egg ‧ 2027</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="theme-color" content="#0b57d0" />
+		<meta name="description" content="Frankfurt am Main, May 27 - 30 | The most relaxed event of the year for highly gifted people" />
+		<link rel="manifest" href="manifest.json" />
+		<link rel="icon" type="image/png" href="icons/icon-192.png" />
+		<link rel="apple-touch-icon" href="icons/icon-192.png" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="homepage is-preload">
@@ -18,7 +23,7 @@
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="index.html" id="logo">egg ‧ 2027</a></h1>
+							<h1><a href="index.html" id="logo">egg ‧ 2027</a></h1>
 							<p>Frankfurt am Main, May 27 - 30</p>
 						</div>
 					</div>
@@ -52,14 +57,14 @@
 						<li><a href="https://egg.3090.eu" target="_blank">3090.eu</a></li>
 						<li><a href="https://wiki.3090.eu/2027/start" target="_blank">Wiki</a></li>
 						<li><a href="https://dsc.3090.eu/categories" target="_blank">Tanagra</a></li>
-						<li><a href="https://egg-shop.myspreadshop.net/" target="_blank">egg ‧ store</a></li>
+						<li><a href="https://egg-shop.myspreadshop.net/" target="_blank">egg ‧ store</a></li>
 					</ul>
 				</nav>
 
 			<!-- Banner -->
 				<section id="banner">
 					<div class="content">
-						<h2>egg ‧ 2027</h2>
+						<h2>egg ‧ 2027</h2>
 						<p>Frankfurt am Main, May 27 - 30</p>
 						<p>The most relaxed event of the year for highly gifted people</p>
 						<!-- Countdown -->
@@ -276,7 +281,7 @@
 														<h3><a href="#">Frankfurt am Main</a></h3>
 														<p>Venue city 2024, 2026 and 2027</p>
 														<ul class="meta">
-															<li class="icon solid fa-map-marker-alt"><a href="https://en.wikipedia.org/wiki/Dominican_Monastery_(Frankfurt)" target="_blank">Venue: Dominikaner Kloster</a> - Kurt-Schumacher-Str. 23, 60311 Frankfurt am Main</li>
+															<li class="icon solid fa-map-marker-alt"><a href="https://en.wikipedia.org/wiki/Dominican_Monastery_(Frankfurt)" target="_blank">Venue: Dominikaner Kloster</a> - Kurt-Schumacher-St[...]
 															<li class="icon solid fa-hotel"><a href="https://spenerhaus.de/" target="_blank">Hotel: Spenerhaus</a> - Dominikanergasse 5, 60311 Frankfurt am Main</li>
 														</ul>
 													</header>
@@ -508,12 +513,12 @@
 									</div>
 									<div class="col-4 col-12-small">
 										<h3>Ben-Gunn Reception</h3>
-										<p>I (i.e. Thorsten) was quite shocked a while ago when I was asked TWICE why the “Benn Gunn”-Reception was called the 
-											 “Benn Gunn”-Reception.</p>
+										<p>I (i.e. Thorsten) was quite shocked a while ago when I was asked TWICE why the "Benn Gunn"-Reception was called the 
+											 "Benn Gunn"-Reception.</p>
 										<p>Honestly, I never even considered that there could be anyone who hasn't heard of Ben Gunn and his 
 											 importance for the egg-meeting. In order to avoid similarly embarassing scenes in the future, I thought I'd add 
 											 some information. </p>
-										<p>You all have read or watched R. L. Stevenson's “Treasure Island”. You all remember that the treasure had been found 
+										<p>You all have read or watched R. L. Stevenson's "Treasure Island". You all remember that the treasure had been found 
 											and then hidden elsewehere by a guy who had been marooned on the island for quite a while. </p>
 										<p>So here's his introduction (and this is why we celebrate this ingenious, quirky man who was obviously a bit odd, 
 											obviously intelligent and obviously likes cheese as one of the earliest TNSers): 
@@ -573,7 +578,7 @@
 													at participating stores to get a refund on the VAT you paid.
 												</p>
 												<ul class="actions">
-													<li><a href="https://www.zoll.de/EN/Private-individuals/Travel/Leaving-Germany/Tax-free-shopping/tax-free-shopping_node.html" class="button large" target="_blank">Tax Free Shopping</a></li>
+													<li><a href="https://www.zoll.de/EN/Private-individuals/Travel/Leaving-Germany/Tax-free-shopping/tax-free-shopping_node.html" class="button large" target="_blank">Tax Free Shopping</[...]
 													</ul>
 									</section>
 									</div>
@@ -820,6 +825,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Register Service Worker -->
+			<script>
+				if ('serviceWorker' in navigator) {
+					window.addEventListener('load', function() {
+						navigator.serviceWorker.register('service-worker.js')
+							.then(function(registration) {
+								console.log('Service Worker registered successfully:', registration);
+							})
+							.catch(function(err) {
+								console.log('Service Worker registration failed:', err);
+							});
+					});
+				}
+			</script>
+
 			<script>
 				async function loadWeather() {
 					const lat = 50.1109;
