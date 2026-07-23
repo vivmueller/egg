@@ -1,13 +1,13 @@
 {
-  "name": "egg ‧ 2027 - Event App",
-  "short_name": "egg 2027",
-  "description": "Frankfurt am Main, May 27 - 30 | The most relaxed event of the year for highly gifted people",
+  "name": "egg ‧ 2027",
+  "short_name": "egg ‧ 2027",
+  "description": " The most relaxed event of the year for highly gifted people",
   "start_url": "/egg/",
   "scope": "/egg/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
-  "theme_color": "#0b57d0",
+  "theme_color": "#F4BB29",
   "icons": [
     {
       "src": "/egg/icons/icon-192.png",
