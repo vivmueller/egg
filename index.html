@@ -1,0 +1,914 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>egg ‧ 2027</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="theme-color" content="#F4BB29" />
+		<meta name="description" content="egg ‧ 2027" />
+		<link rel="manifest" href="manifest.json" />
+		<link rel="icon" type="image/png" href="icons/icon-192.png" />
+		<link rel="apple-touch-icon" href="icons/icon-192.png" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1><a href="index.html" id="logo">egg ‧ 2027</a></h1>
+							<p>Frankfurt am Main, May 27 - 30</p>
+						</div>
+					</div>
+				</header>
+
+			<!-- Navigation Menu -->
+				<nav id="nav">
+					<ul>
+						<li class="current">
+							<a href="#">Menu</a>
+							<ul>
+								<li><a href="#important-information">Important information ℹ︎ </a></li>
+
+								<li><a href="#venue">Venue & City 🏢</a></li>
+
+								<li><a href="#getting-there">Getting there ✈️</a></li>	
+																
+								<li><a href="#programme">Programme 🗓️</a></li>
+									
+								<li><a href="#germany">Germany Tips 💡</a></li>
+
+								<li><a href="#community-welfare">Community Welfare 🌼</a></li>
+								
+								<li><a href="#emergency">Emergency 🚑</a></li>
+
+								<li><a href="#">Legal</a></li>
+							</ul>
+						</li>
+
+						<li><a href="index.html">Start</a></li>
+						<li><a href="https://egg.3090.eu" target="_blank">3090.eu</a></li>
+						<li><a href="https://wiki.3090.eu/2027/start" target="_blank">Wiki</a></li>
+						<li><a href="https://dsc.3090.eu/categories" target="_blank">Tanagra</a></li>
+						<li><a href="https://egg-shop.myspreadshop.net/" target="_blank">egg ‧ store</a></li>
+					</ul>
+				</nav>
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<h2>egg ‧ 2027</h2>
+						<p>Frankfurt am Main, May 27 - 30</p>
+						<p>The most relaxed event of the year for highly gifted people</p>
+						<!-- Countdown -->
+						<a href="#main" class="button scrolly" id="countdownBtn" aria-live="polite">T - loading...</a>
+						<script>
+							function updateCountdown() {
+								const eventDate = new Date("2027-05-27T10:00:00+02:00");
+								const now = new Date();
+								const diff = Math.max(0, eventDate - now);
+								const totalSeconds = Math.floor(diff / 1000);
+								const days = Math.floor(totalSeconds / 86400);
+								const hours = Math.floor((totalSeconds % 86400) / 3600);
+								const minutes = Math.floor((totalSeconds % 3600) / 60);
+								const seconds = totalSeconds % 60;
+
+								const pad = value => String(value).padStart(2, "0");
+								document.getElementById("countdownBtn").textContent =
+									`T - ${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+							}
+
+							updateCountdown();
+							setInterval(updateCountdown, 1000);
+						</script>
+
+
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+						<!-- Highlight -->		
+						<section class="box highlight">
+							<!-- Weather -->								
+								<section id="weather-section" aria-label="Weather forecast">
+										<div id="weather-widget" aria-live="polite" role="region" aria-label="Weather forecast">
+											<div id="weather-today" class="weather-line" title="Today">Loading weather…</div>
+											<div id="weather-tomorrow" class="weather-line" title="Tomorrow"></div>
+										</div>
+								</section>									
+							<!-- Calendar - Important Information -->	
+								<section>
+								<ul class="calendar-days">
+									<li><a href="#"><span class="day-number">27</span><span class="day-name">Thu</span></a></li>
+									<li><a href="#"><span class="day-number">28</span><span class="day-name">Fri</span></a></li>
+									<li><a href="#"><span class="day-number">29</span><span class="day-name">Sat</span></a></li>
+									<li><a href="#"><span class="day-number">30</span><span class="day-name">Sun</span></a></li>
+								</ul>										<header>
+										<h2 id="important-information">Important information & FAQ</h2>
+										<p>Practical points that remain relevant throughout the meeting</p>
+									</header>
+									<ul class="actions">
+										<li><button type="button" class="button" id="important-information-toggle" aria-expanded="false" aria-controls="important-information-content">Read</button></li>
+									</ul>
+									<div id="important-information-content" hidden>
+									<p>
+										The event is not open to the general public, but only to members of selected
+										99.9th-percentile-plus (3.090 σ ↥) HIQ societies and their guests.
+										See the <a href="https://egg.3090.eu/" target="_blank">Registration page</a> for more information.<br>
+										Logistical details such as accommodation, travel, venue access and the
+										programme are documented elsewhere and can be accessed through the site navigation.
+									</p>
+
+									<h3>🚭 Smoking</h3>
+									<p>
+										Smoking and vaping are <strong>not permitted in the building or the courtyard</strong>.<br>
+										Please be considerate towards participants who are sensitive to smoke. When
+										smoking outside, keep an appropriate distance from entrances, windows and
+										other people, and avoid exposing others to smoke unnecessarily.
+									</p>
+
+									<h3>📸 Photography and Privacy</h3>
+
+									<p>
+										During the meeting, participants may take photographs and videos for private
+										personal use. However, publishing, sharing or otherwise making available any
+										image or video in which another participant is identifiable requires that
+										person's explicit prior consent. Silence, lack of objection or the absence of
+										a red lanyard do not constitute consent.<br>
+										A red lanyard indicates that the wearer does not wish to be photographed,
+										even for private use. Please respect this wish.<br>
+										<strong>Participants are responsible for ensuring their own compliance with applicable
+										privacy and data protection laws, including the</strong> <a href="https://gdpr-info.eu/" target="_blank">GDPR</a>. 
+										The organisers cannot monitor or control the actions of individual participants and accept no
+										responsibility for privacy or GDPR-related issues arising from photographs or
+										videos taken, shared or published by attendees.
+									</p>
+
+									<h3>💐 Respect the People Doing the Work</h3>
+									<p>
+										egg is a meeting created by members for members, and it only happens because volunteers 
+										invest a considerable amount of their personal time and effort. <br>
+										Nobody is paid to organise, support or run the event.<br>
+										Please treat volunteers with the same courtesy and respect you would expect yourself. 
+										Be patient when help is needed, understand that resources are limited, and remember 
+										that every contribution is made voluntarily. By participating, welcoming newcomers 
+										and supporting one another, you help make egg a better experience for everyone.<br>
+										➡️ Respect also means being mindful of volunteer workload, including
+										<strong>consulting this wiki before asking questions</strong>.
+									</p>
+									<p>
+										To ensure smooth coordination and technical stability, <strong> only official team
+										members </strong>(identifiable by the red event logo) are authorised to communicate
+										with venue staff regarding organisational matters. <br>
+										Participants are kindly asked <strong>not to contact venue personnel directly or operate any technical
+										equipment</strong>, including mixing consoles, lighting controls or accessing
+										technical areas. If you have a request or notice a need, please contact a
+										team member.
+									</p>
+
+									<h3>🫶🏻 Respect Vulnerabilities of Other Participants</h3>
+									<p>
+										egg is often described as having a uniquely familiar atmosphere. People
+										speak openly about personal matters and vulnerabilities, and there is
+										frequently generosity towards less well-off participants.<br>
+										On rare occasions, some participants have felt that this openness was
+										exploited, for example when private conversations later turned into
+										unsolicited professional approaches, or when social generosity was perceived
+										as being deliberately taken advantage of. There is a large grey area here;
+										please err on the side of caution.
+									</p>
+
+									<h3>👌 Respect Others</h3>
+									<p>
+										We ask everyone not to reinforce the stereotype of highly gifted people as
+										socially insensitive or awkward, especially when identifiable as part of the
+										egg community. Courtesy, patience and basic social consideration are
+										expected throughout the meeting.
+									</p>
+
+									<h3>🙋🏻‍♂️ Unannounced Guests</h3>
+									<p>
+										<strong>No unannounced or unregistered guests</strong> are allowed,
+										regardless of how briefly someone intends to attend. If a person is present
+										at the meeting, that person must be properly registered.
+									</p>
+
+									<h3>🐉 Animals</h3>
+									<p>
+										Participants are <strong>strongly advised to leave pets at home</strong>.
+										No animals of any kind are permitted on the premises except for service
+										animals that have been formally approved in advance by the organisers. All
+										other animals—including emotional support animals, therapy animals and
+										pets—will not be allowed entry.
+									</p>
+
+									<h3>🚂 Getting There</h3>
+									<p>
+										Please consider the environment when travelling and prefer trains over
+										aeroplanes whenever possible. Alternatively, share a car. Frankfurt Airport
+										is connected to local and international rail networks and offers a direct
+										S-Bahn connection (S8 and S9) to Konstablerwache in less than 20 minutes for
+										under €7.
+									</p>
+
+									<h3>🎹 Open Stage</h3>
+									<p>
+										We are planning to host our usual Open Stage, with more information to
+										follow soon. If you have musical skills, would like to showcase something
+										cultural (such as poetry readings or folk dance), or possess a unique
+										talent that you would like to share, there are still open slots available.<br>
+										Contact us at: <a href="mailto:open_stage@3090.eu">open_stage@3090.eu</a>
+									</p>
+
+									<h3>💬 Is There an Online Group for Participants?</h3>
+									<p>
+										We have a Discourse forum at
+										<a href="https://dsc.3090.eu/categories" target="_blank">Discourse</a>
+										where all registered participants are invited to join.
+									</p>
+
+									<h3>🕑 At What Time Does the Meeting Start and End?</h3>
+									<p>
+										As egg Thursday is a public holiday in some countries, the meeting begins on
+										Thursday. Doors open at 10:00, and as people arrive the meeting gradually
+										gets underway. By evening, a good number of participants are usually present.
+										There is no formal programme on Thursday; some people go out for dinner,
+										while others remain at the venue to welcome new arrivals. The venue closes
+										at 22:00.<br>>
+										On Sunday, participants generally gather again around 10:00. Those who went
+										out on Saturday night may arrive later, while others may leave early to
+										catch flights. Again, there is no organised programme—just conversation and
+										socialising. The meeting officially ends at 14:00 on Sunday, although some
+										participants may remain afterwards.
+									</p>
+									<p>
+										<strong>In short: Thursday 10:00 to Sunday 14:00.</strong>
+									</p>
+									<ul class="actions">
+										<li><button type="button" class="button" id="important-information-collapse">Collapse</button></li>
+									</ul>
+									</div>
+								</section>
+								
+							</div>
+
+				<!-- Content -->
+				<div class="col-12">
+
+					<!-- Venue & City -->
+						<section id="venue" class="box blog">
+							<h2 class="major"><span>Venue & City</span></h2>
+							<div>
+								<div class="row">
+									<div class="col-9 col-12-medium">
+										<div class="content">
+
+											<!-- Featured Post -->
+												<article class="box post">
+													<header>
+														<h3><a href="#">Frankfurt am Main</a></h3>
+														<p>Venue city 2024, 2026 and 2027</p>
+														<ul class="meta">
+															<li class="icon solid fa-map-marker-alt"><a href="https://en.wikipedia.org/wiki/Dominican_Monastery_(Frankfurt)" target="_blank">Venue: Dominikaner Kloster</a> - Kurt-Schumacher-Str. 23, 60311 Frankfurt am Main</li>
+															<li class="icon solid fa-hotel"><a href="https://spenerhaus.de/" target="_blank">Hotel: Spenerhaus</a> - Dominikanergasse 5, 60311 Frankfurt am Main</li>
+														</ul>
+													</header>
+													<span class="image featured"><img src="images/pic05.jpg" alt="" /></span>
+													<p>
+														Located in the heart of Frankfurt, the venue is surrounded by numerous hotels, restaurants and cafés, not far from the Zeil (main shopping street).<br>
+														Börneplatz tram stop is just around the corner, while Konstablerwache, one of the city's main transport hubs, 
+														is only a short 300 m walk away.
+													</p>
+													<a href="#" class="button">Add some link here</a>
+												</article>
+
+										</div>
+									</div>
+									<div class="col-3 col-12-medium">
+										<div class="sidebar">
+
+											<!-- Archives -->
+												<ul class="divided">
+													<li>
+														<article class="box post-summary">
+															<h3 id="free-wifi">Free WiFi</h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-wifi"><strong>Venue</strong>: ERV-Gast (SYp-1894) </li>
+																<li class="icon solid fa-wifi"><strong>City</strong>: FrankfurtFreeWifi</li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3 id="interesting-places">Visit Frankfurt</h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-city"><a href="https://frankfurt.de/frankfurt-entdecken-und-erleben/sehenswuerdigkeiten"target="_blank">Interesting places</a></li>
+																<li class="icon solid fa-landmark"><a href="https://frankfurt.de/themen/kultur/museen-und-kunst/museen-a-bis-z" target="_blank">Museums</a></li>
+																<li class="icon solid fa-ship"><a href="https://www.visitfrankfurt.travel/en/booking/round-tours/boat-trips" target="_blank">Boat trips</a></li>
+															</ul>
+														</article>
+													</li>																
+													<li>
+														<article class="box post-summary">
+															<h3 id="next-atm">Next ATM</h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-money-bill"><a href="https://maps.app.goo.gl/TqbqY7F9dodHaAJv8" target="_blank">Deutsche Bank</a> - Zeil 57</li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3 id="groceries-bakery">Groceries & bakery</h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-shopping-cart"><a href="https://maps.app.goo.gl/H3uoLoL9y54jdeUB8" target="_blank">Tegut Supermarket</a> - Kurt-Schumacher-Str. 30</li>
+																<li class="icon solid fa-bread-slice"><a href="https://maps.app.goo.gl/H3uoLoL9y54jdeUB8" target="_blank">Eifler Bakery</a> - Mo-So 06:00- 20:00</li>
+															</ul>
+														</article>
+													</li>
+													
+												</ul>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+					<!-- Getting there -->
+						<section id="getting-there" class="box features">
+										<h2 class="major"><span>Getting there</span></h2>
+
+										<div>
+											<div class="row">
+												<div class="col-3 col-6-medium col-12-small">
+
+										<!-- Feature -->
+											<section class="box feature">
+												<span class="image featured" id="navigate"><img src="images/pic01.jpg" alt="" /></span>
+												<h3>Navigate</h3>
+												<p class="address">
+													Address: Kurt-Schumacher-Str. 23,
+													60311 Frankfurt am Main (DE) 
+													|Coordinates: 50.112309, 8.687648|
+												</p>
+												<ul class="actions">
+													<li><a href="https://maps.app.goo.gl/SDqbVgAqcNruFNm79" class="button large" target="_blank">Google Maps</a></li>
+													<li><a href="https://www.openstreetmap.org/?mlat=50.112309&mlon=8.687648#map=19/50.112309/8.687648" class="button alt large" target="_blank">OpenStreetMap</a></li>
+												</ul>
+											</section>
+
+									</div>
+									<div class="col-3 col-6-medium col-12-small">
+
+										<!-- Feature -->
+											<section class="box feature">
+												<span class="image featured" id="public-transport"><img src="images/pic02.jpg" alt="" /></span>
+												<h3>Public transport</h3>
+												<p class="transport-info">										
+													Nearest stops: <br>
+													<strong>Börneplatz</strong> (tram 11, 12, 18; bus 30, M36)
+													and <strong>Konstablerwache</strong> (S1, S2, S5, S6, S8, S9, U4, U5), approximately
+													300m from the venue.<br>
+													<strong>Tickets:</strong>
+												</p>
+												<ul class="actions">
+													<li><a href="https://www.rmv.de/c/en/shop/app-rmvgo" class="button large" target="_blank">RMVgo App</a></li>
+													<li><a href="https://www.rmv.de/c/en/shop/more-purchase-options/rmv-ticket-machines" class="button alt large" target="_blank">Ticket Machines</a></li>
+												</ul>
+
+											</section>
+
+									</div>
+									<div class="col-3 col-6-medium col-12-small">
+
+										<!-- Feature -->
+											<section class="box feature">
+												<span class="image featured" id="airport"><img src="images/pic03.jpg" alt="" /></span>
+												<h3>Airport</h3>
+												<p class="airport-info">
+													<strong>FRA Frankfurt Airport</strong> is the nearest airport.<br>
+													The train station is located in the underground level of 
+													<a href="https://map.frankfurt-airport.com/?poi=regionalbahnhof" target="_blank">Terminal 1</a> (Level 0). <br>
+													S-Bahn lines S8 and S9 run every 15 minutes to <strong>Konstablerwache</strong> in ~20 minutes and costs about €7.<br>																												
+												</p>
+											</section>
+
+									</div>
+									<div class="col-3 col-6-medium col-12-small">
+
+										<!-- Feature -->
+											<section class="box feature">
+												<span class="image featured" id="parking"><img src="images/pic04.jpg" alt="" /></span>
+												<h3>Parking</h3>
+												<p class="parking-info">
+													Parking in Hesse includes free parking areas (P&R or P&M) outside of the city centre.<br>
+													Parkopedia can be configured with expected arrival and departure times to find the best parking options and prices.<br>
+												</p>
+												<ul class="actions">
+													<li><a href="https://parken.hessen.de/?laenge=8.684835&breite=50.113491&zoom=14.2" class="button large" target="_blank">Parking in Hesse</a></li>
+													<li><a href="https://www.parkopedia.de/" class="button alt large" target="_blank">Parkopedia</a></li>
+												</ul>
+											</section>
+
+									</div>
+									
+								</div>
+							</div>
+						</section>
+
+					<!-- Programme -->
+						<section id="programme" class="box features">
+							<h2 class="major"><span>Programme</span></h2>
+							<style>
+								#programme .row {
+									margin-top: 2em;
+								}
+								#programme .row:first-of-type {
+									margin-top: 0;
+								}
+								#programme .actions .button {
+									padding: 0.3em 0.8em !important;
+								}
+								#programme .actions {
+									margin-top: 0.1em;
+								}
+								#programme p {
+									margin-bottom: 0.35em;
+								}
+																
+							</style>
+
+							<div>
+								<div class="row">
+
+									<!-- Presentations -->
+									<div class="col-2 col-12-small">
+										<span class="image featured"><img src="images/fried-egg.jpg" alt="" /></span>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Presentations</h3>
+										<p>
+											A selection of interesting presentations will take place throughout the event, offering insights, 
+											ideas, and inspiration from members of the community. Whether sharing knowledge, experiences, 
+											or personal projects, the speakers will provide plenty of opportunities to learn something new 
+											and spark engaging discussions. See further descriptions in Tanagra.
+										</p>
+										<ul class="actions">
+													<li><a href="#" class="button small" target="_blank">Add link to Discourse</a></li>
+										</ul>
+									</div>
+
+									<!-- Open Stage -->
+									<div class="col-2 col-12-small">
+										<span class="image featured"><img src="images/fried-egg.jpg" alt="" /></span>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Open Stage</h3>
+										<p>
+											The Open Stage is an opportunity to share music, poetry, dance, comedy, magic, or any other form of 
+											performance in a relaxed and supportive atmosphere. Whether polished or experimental, all contributions are welcome.</p>
+										<p>If you would like to perform, please sign up as early as possible and let the organisers know about any special requirements.</p>
+										<p>We look forward to seeing and hearing your creations!</p>										
+										<ul class="actions">
+											<li><a href="mailto: open_stage@3090.eu" class="button small">Contact (e-mail)</a></li>
+										</ul>
+									</div>							
+								</div>
+
+								<div class="row">
+
+									<!-- Karaoke -->
+									<div class="col-2 col-12-small">
+										<span class="image featured"><img src="images/karaoke-egg.jpg" alt="" /></span>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Karaoke</h3>
+										<p>As is tradition since 2018, we will have Karaoke this year as well.
+											 Like in the previous years, our CKO (Chief Karaoke Officer) will be using the 
+											 Karafun application as the tool to play the music and maintain the playlist.</p>											 
+										<p>In order to add your song to the playlist, you need to use an internet connected device 
+											 to access a URL being displayed throughout the session.</p>
+										<p><strong>Georg K., official CKO</strong></p>
+										
+										<ul class="actions">
+											<li><a href="https://www.karafun.de/" class="button small" target="_blank">Karafun</a></li>
+										</ul>
+									</div>
+
+									<!-- Ben-Gunn Reception -->
+									<div class="col-2 col-12-small">
+										<span class="image featured"><img src="images/BenGunn.jpg" alt="" /></span>
+									</div>
+									<div class="col-4 col-12-small">
+										<h3>Ben-Gunn Reception</h3>
+										<p>I (i.e. Thorsten) was quite shocked a while ago when I was asked TWICE why the “Benn Gunn”-Reception was called the 
+											 “Benn Gunn”-Reception.</p>
+										<p>Honestly, I never even considered that there could be anyone who hasn't heard of Ben Gunn and his 
+											 importance for the egg-meeting. In order to avoid similarly embarassing scenes in the future, I thought I'd add 
+											 some information. </p>
+										<p>You all have read or watched R. L. Stevenson's “Treasure Island”. You all remember that the treasure had been found 
+											and then hidden elsewehere by a guy who had been marooned on the island for quite a while. </p>
+										<p>So here's his introduction (and this is why we celebrate this ingenious, quirky man who was obviously a bit odd, 
+											obviously intelligent and obviously likes cheese as one of the earliest TNSers): 
+										</p>
+										<ul class="actions">
+											<li><a href="https://literaturepage.com/read/treasureisland-87.html" class="button small" target="_blank">Read passage</a></li>
+										</ul>
+									</div>
+
+									
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Germany -->
+						<section id="germany" class="box features">
+							<h2 class="major"><span>Germany Tips</span></h2>
+
+							<div>
+								<div class="row">
+									<!-- Recycling -->
+									<div class="col-3 col-6-medium col-12-small">								
+									<section class="box feature">
+												<span class="image featured" id="Recycling"><img src="images/bottle-egg.jpg" alt="" /></span>
+												<h3>Recycling</h3>
+												<p>
+													Recycle bottles and cans - do not throw them in the garbage!
+													Try to recycle as much as possible, and use the appropriate bins for paper, plastic, glass, and other materials.
+												</p>
+												<ul class="actions">
+													<li><a href="https://www.how-to-germany.com/pfand-in-germany" class="button large" target="_blank">Deposit bottles</a></li>
+													<li><a href="https://www.how-to-germany.com/recycling-in-germany/" class="button alt large" target="_blank">Recycling in Germany</a></li>
+												</ul>
+									</section>
+									</div>
+									
+									<!-- Restaurants & Tipping -->
+									<div class="col-3 col-6-medium col-12-small">									
+									<section class="box feature">
+												<span class="image featured" id="tipping"><img src="images/icecream-egg.jpg" alt="" /></span>
+												<h3>Restaurants & Tipping</h3>
+												<p class="tipping-info">
+													In Germany, restaurant bills are usually paid individually, with each person paying for their own food and drinks.<br> 
+													For good service, it is customary to leave a small tip of around 5–10%.
+												</p>
+									</section>
+									</div>
+
+									<!-- Tax free -->
+									<div class="col-3 col-6-medium col-12-small">						
+									<section class="box feature">
+												<span class="image featured" id="Tax free"><img src="images/taxfree-egg.jpg" alt="" /></span>
+												<h3>Tax Free Shopping</h3>
+												<p>
+													Enjoy tax-free shopping in Germany. Bring your passport and purchase items 
+													at participating stores to get a refund on the VAT you paid.
+												</p>
+												<ul class="actions">
+													<li><a href="https://www.zoll.de/EN/Private-individuals/Travel/Leaving-Germany/Tax-free-shopping/tax-free-shopping_node.html" class="button large" target="_blank">Tax Free Shopping</a></li>
+													</ul>
+									</section>
+									</div>
+								
+									<!-- Schengen visa -->
+									<div class="col-3 col-6-medium col-12-small">									
+									<section class="box feature">
+												<span class="image featured" id="Schengen visa"><img src="images/passport-egg.jpg" alt="" /></span>
+												<h3>Do you need a visa?</h3>
+												<p>
+													Citizens of visa-waiver countries can stay in Germany for up to 90 days without a visa. <br>
+													All others require a Schengen visa.
+												</p>
+												<ul class="actions">
+													<li><a href="https://videx.diplo.de/videx/visum-erfassung/en/videx-kurzfristiger-aufenthalt" class="button large" target="_blank">Request Schengen visa</a></li>
+													<li><a href="https://www.auswaertiges-amt.de/en/visa-service/231148-231148" class="button alt large" target="_blank">Visa-waiver countries</a></li>
+												</ul>
+									</section>
+									</div>  
+								</div>       
+							</div> 
+						</section>
+
+					<!-- Community Welfare -->
+						<section id="community-welfare" class="box features">
+							<h2 class="major"><span>Community Welfare</span></h2>
+
+							<p>A Community Welfare Team is available throughout the event for personal or interpersonal concerns.<br>
+							Support is available for conflicts, uncomfortable situations, misunderstandings, or simply when someone needs to talk.<br>
+							<p><strong>All conversations are treated confidentially.</strong> The team operates independently and can be contacted in person, 
+								by phone, or via Signal.</p>
+							<p>Reach out to any of our community contacts below for support:</p>
+						
+							<style>
+								#community-welfare .feature .image.featured {
+									display: block;
+									float: none;
+									width: 80px;
+									margin: 0 auto 1em auto;
+								}
+								#community-welfare .feature {
+									text-align: left;
+								}
+								#community-welfare .feature h3,
+								#community-welfare .feature p {
+									margin: 0 0 0.3em 0;
+								}
+								#community-welfare p {
+    								margin-bottom: 0.35em;
+								}
+							</style>
+
+						<!-- Volunteers -->
+							<div>
+								<div class="row">
+
+									<!-- Person 1 -->
+									<div class="col-3 col-6-medium col-12-small">
+										<section class="box feature">
+											<span class="image featured"><img src="images/waving-egg.jpg" alt="" /></span>
+											<h3>Volunteer 1</h3>
+											<p>Tel: +49 xxx xxx</p>
+											<p>Languages: DE, EN</p>
+										</section>
+									</div>
+
+									<!-- Person 2 -->
+									<div class="col-3 col-6-medium col-12-small">
+										<section class="box feature">
+											<span class="image featured"><img src="images/waving-egg.jpg" alt="" /></span>
+											<h3>Volunteer 2</h3>
+											<p>Tel: +41 xxx xxx</p>
+											<p>Languages: FR, EN</p>
+										</section>
+									</div>
+
+									<!-- Person 3 -->
+									<div class="col-3 col-6-medium col-12-small">
+										<section class="box feature">
+											<span class="image featured"><img src="images/waving-egg.jpg" alt="" /></span>
+											<h3>Volunteer 3</h3>
+											<p>Tel: +42 xxx xxx</p>
+											<p>Languages: DE, FR, EN</p>
+										</section>
+									</div>
+
+									<!-- Person 4 -->
+									<div class="col-3 col-6-medium col-12-small">
+										<section class="box feature">
+											<span class="image featured"><img src="images/waving-egg.jpg" alt="" /></span>
+											<h3>Volunteer 4</h3>
+											<p>Tel: +43 xxx xxx</p>
+											<p>Languages: DE, FR, EN</p>
+										</section>
+									</div>
+
+								</div>
+							</div>
+						</section>
+
+					<!-- Medical emergencies -->
+						<section id="emergency" class="box blog">
+								<h2 class="major"><span>Medical emergencies</span></h2>
+								<div>
+									<div class="row">
+										<div class="col-8 col-12-medium">
+											<div class="content">
+
+											<!-- Featured Post -->
+												<article class="box post">
+													<header>
+														<h3><a href="#">Medical emergencies during the event</a></h3>
+														<p>In case of life threatening emergencies call 112</p>
+														<ul class="meta" style="font-size: 1em">
+															<li class="icon solid fa-hospital"><strong>Next hospital: </strong>Bürgerhospital Frankfurt - 
+																Nibelungenallee 37–41, 60318 Frankfurt am Main <br>(2,5 km from venue)</li>
+																</li>															
+															<li class="icon solid fa-subway">Underground: U5 to "Deutsche Nationalbibliothek"</li>
+															<li class="icon solid fa-phone">Tel. +49 69 1500-0</li>
+														</ul>
+													</header>
+													<a href="#" class="image featured"><img src="images/112-egg.jpg" alt="" /></a>
+													<p>														
+														Volunteer physicians will be available during the event to assist with medical emergencies.<br>
+														As these volunteers are attending as participants as well, please respect their time and privacy 
+														by limiting requests to <strong>urgent</strong> medical situations.<br>
+														For smaller medical issues, please visit a local physician or pharmacy.							
+													</p>
+													<a href="https://maps.app.goo.gl/E6hgecuKWKUQutqU9" target="_blank" class="button" style="Background-color: rgb(218, 10, 10)">Google Maps: Bürgerhospital</a>
+												</article>
+
+										</div>
+									</div>
+									<!-- Sidebar -->
+									<div class="col-4 col-12-medium">
+										<div class="sidebar">											
+												<ul class="divided">
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Physicians @ egg</a></h3>
+															<ul class="meta" style="font-size: 1em">
+																<li class="icon solid fa-user-md">Dr. Victor Frankenstein</li>
+																<li class="icon solid fa-user-md">Dr. Hannibal Lecter</li>																</li>
+																<li class="icon solid fa-user-md">Dr. Gregory House</li>
+															</ul>
+														</article>
+													</li>
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Local medical service</a></h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-user-md"><a href="https://www.praxis-grandjean.de/">Physician at the Konstablerwache</a>-<br> Reineckstr. 1, 60313 Ffm</li>
+																<li class="icon solid fa-clinic-medical"><a href="https://www.buergerhospital-ffm.de/anfahrt-kontakt/">Out-of-hours medical service</a></li>
+																<li class="icon solid fa-laptop-medical"><a href="https://bereitschaftspraxen.116117.de/">Find on-call practices</a></li>
+															</ul>
+														</article>
+													</li>		
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Next pharmacy</a></h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li class="icon solid fa-pills"><a href="https://maps.app.goo.gl/N3XFTowNP73ydSDeA">The Apple Pharmacy </a><br>(Fr-Sa 08:30-19:00)</li>
+																<li class="icon solid fa-history"><a href="https://www.apotheken.de/apotheken-und-notdienste-suchen/">Find an open pharmacy (any time)</a></li>
+															</ul>
+														</article>
+													</li>																								
+													<li>
+														<article class="box post-summary">
+															<h3><a href="#">Health insurance for tourists</a></h3>
+															<ul class="meta" style="font-size: 0.9em; line-height: 1.3">
+																<li>If you require a Schengen visa to visit Germany, travel health insurance is mandatory and must cover medical 
+													emergencies throughout the Schengen Area. Visitors from visa-exempt countries are not required to have it, 
+													but it is strongly recommended.</li>
+																<li class="icon solid fa-file-medical"><a href="https://www.germany-visa.org/insurances-germany/travel-insurance/">Travel Health Insurance</a></li>
+															</ul>
+														</article>
+													</li>
+												</ul>
+
+											</div>	
+										</div>
+										</div>
+									</div>
+						</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+								<!-- About -->
+									<section>
+										<h2 class="major"><span>Contact the organizers</span></h2>
+										<p>
+											For questions or concerns, please contact the organizers at <a href="mailto:info@3090.eu">info@3090.eu</a>
+										</p>
+
+									</section>
+
+							</div>
+							<div class="col-12">
+
+								<!-- Contact 
+									<section>
+										<h2 class="major"><span>Get in touch</span></h2>
+										<ul class="contact">
+											<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
+											<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+											<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+											<li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+											<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+										</ul>
+									</section>
+								-->
+							</div>
+						</div>
+
+						<!-- Copyright -->
+							<div id="copyright">
+								<ul class="menu" style="font-size: 0.9em; line-height: 1">
+									<li> (c) Viviana Müller</li>
+									<li>Design based on: <a href="http://html5up.net/txt" target="_blank">TXT | HTML5 UP</a></li>
+									
+								</ul>
+							</div>
+
+					</div>
+				</footer>
+			
+					<!--Legal-->	
+						<div>
+							<a href="impressum.html">Legal Notice (Impressum) | Privacy Policy</a>
+						</div>
+
+		</div>
+
+	<!-- Weather Scripts -->
+		<div>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				async function loadWeather() {
+					const lat = 50.1109;
+					const lon = 8.6821;
+					const elToday = document.getElementById('weather-today');
+					const elTomorrow = document.getElementById('weather-tomorrow');
+					if (!elToday || !elTomorrow) return;
+
+					const url = `https://api.open-meteo.com/v1/dwd-icon?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=2&timezone=Europe%2FBerlin`;
+
+					try {
+						const resp = await fetch(url, { cache: 'no-cache' });
+						if (!resp.ok) throw new Error('Weather API ' + resp.status);
+						const data = await resp.json();
+						const days = data.daily;
+						if (!days || !Array.isArray(days.time) || days.time.length === 0) throw new Error('No weather data');
+
+						function mapCode(code) {
+							if (code === 0) return '☀️ Clear';
+							if (code >= 1 && code <= 3) return '⛅ Partly cloudy';
+							if (code >= 45 && code <= 48) return '🌫️ Fog';
+							if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return '🌧️ Rain';
+							if (code >= 71 && code <= 77) return '❄️ Snow';
+							if (code >= 95 && code <= 99) return '⛈️ Thunder';
+							if (code >= 4 && code <= 49) return '☁️ Cloudy';
+							return '🌤️ Mixed';
+						}
+
+						function renderText(idx) {
+							const dateISO = days.time[idx];
+							const min = Math.round(days.temperature_2m_min[idx]);
+							const max = Math.round(days.temperature_2m_max[idx]);
+							const code = days.weather_code[idx];
+							const label = mapCode(code);
+							const weekday = new Date(dateISO + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'long' });
+							return `${weekday}  ${label}  ${min}° / ${max}°`;
+						}
+
+						elToday.textContent = renderText(0);
+						elTomorrow.textContent = days.time.length > 1 ? renderText(1) : '';
+					} catch (err) {
+						console.warn('Weather load failed:', err);
+						if (!elToday.textContent) elToday.textContent = '';
+						if (!elTomorrow.textContent) elTomorrow.textContent = '';
+					}
+				}
+
+				loadWeather();
+			</script>
+			<script>
+				const importantInformationToggle = document.getElementById('important-information-toggle');
+				const importantInformationCollapse = document.getElementById('important-information-collapse');
+				const importantInformationContent = document.getElementById('important-information-content');
+
+				function setImportantInformationExpanded(expanded) {
+					importantInformationContent.hidden = !expanded;
+					importantInformationToggle.setAttribute('aria-expanded', String(expanded));
+				}
+
+				importantInformationToggle.addEventListener('click', function () {
+					setImportantInformationExpanded(true);
+				});
+
+				importantInformationCollapse.addEventListener('click', function () {
+					setImportantInformationExpanded(false);
+					importantInformationToggle.focus();
+				});
+			</script>
+		</div>
+
+	<!-- Register Service Worker -->
+			<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', function() {
+				navigator.serviceWorker.register('service-worker.js')
+					.then(function(registration) {
+					console.log('Service Worker registered successfully:', registration);
+					})
+					.catch(function(err) {
+					console.log('Service Worker registration failed:', err);
+					});
+				});
+			}
+			</script>
+
+	</body>
+</html>
