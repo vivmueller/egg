@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:700|Ubuntu:700");
 
 /*
 	TXT by HTML5 UP
@@ -144,13 +144,15 @@ input, select, textarea {
 	}
 
 	a {
-		color: #006376;
+		color: #B8860B;
 		text-decoration: underline;
+		text-decoration-color: #F4BB29;
 	}
 
-		a:hover {
+	a:not(.button):hover {
+			color: #F4BB29;
 			text-decoration: none;
-		}
+	}
 
 	b, strong {
 		font-weight: 700;
@@ -1839,7 +1841,7 @@ input, select, textarea {
 			input[type="reset"].alt:hover,
 			button.alt:hover,
 			.button.alt:hover {
-				background: #bbbbbb;
+				background: #F4D229;
 			}
 
 			input[type="button"].alt:active,
@@ -2141,6 +2143,11 @@ input, select, textarea {
 			ul.meta li a {
 				color: inherit;
 				outline: 0;
+			}
+
+			ul.meta li a:hover {
+				color: #F4BB29;
+				text-decoration: none;
 			}
 
 			ul.meta li:first-child {
@@ -2445,6 +2452,7 @@ input, select, textarea {
 
 			#header .logo h1 {
 				display: inline;
+				font-family: 'Ubuntu', sans-serif;
 			}
 
 			#header .logo p {
@@ -2669,7 +2677,7 @@ input, select, textarea {
 			padding-left: 0;
 		}
 
-/* Footer */
+	/* Footer */
 
 	#footer {
 		text-align: center;
@@ -2688,7 +2696,7 @@ input, select, textarea {
 				background: #f2f5f3;
 			}
 
-/* Copyright */
+	/* Copyright */
 
 	#copyright {
 		display: inline-block;
@@ -2712,6 +2720,7 @@ input, select, textarea {
 				border-width: 2px;
 				line-height: 1em;
 			}
+
 
 /* XLarge */
 
@@ -3217,4 +3226,33 @@ input, select, textarea {
 				font-size: 10pt;
 			}
 
+	}
+/* new footer */
+	#footer-bottom {
+	text-align: center;
+	font-size: 0.85em;
+	color: #ffffff;
+	background: #000000;
+	margin-top: 2em;
+	padding: 1.25em 1em;
+	width: 100%;
+	box-sizing: border-box;
+	}
+
+	#footer-bottom a {
+		color: #ffffff;
+		text-decoration: none;
+	}
+
+	#footer-bottom a:hover {
+		color: #F4BB29;
+	}
+
+	#footer-bottom .sep {
+		margin: 0 0.5em;
+		color: #aaaaaa;
+	}
+
+	#copyright {
+		display: none;
 	}
