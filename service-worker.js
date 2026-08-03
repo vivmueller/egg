@@ -1,4 +1,4 @@
-const CACHE_NAME = 'egg-2027_v2026-08-03_09:20';
+const CACHE_NAME = 'egg-2027_v2026-08-03_09:35';
 const urlsToCache = [
   '/egg/',
   '/egg/index.html',
