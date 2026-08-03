@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>egg · 2027</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#F4BB29" />
+    <link rel="icon" type="image/png" href="icons/icon-192.png" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f2f5f3;
+        padding-top: 0 !important;
+      }
+      .login-box {
+        background: #fff;
+        border-top: solid 35px #F4BB29;
+        border-bottom: solid 10px #cccccc;
+        padding: 3em 3em 2.5em;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .login-box h1 {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.75em;
+        margin-bottom: 0.2em;
+        color: #6b7770;
+      }
+      .login-box .subtitle {
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-weight: 700;
+        color: #cccccc;
+        font-size: 1em;
+        margin-bottom: 1.75em;
+        display: block;
+      }
+      .login-box input[type="password"] {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        border: solid 2px #E7EAE8;
+        line-height: 3em;
+        padding: 0 1em;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+        color: #6b7770;
+        margin-bottom: 1em;
+        box-sizing: border-box;
+      }
+      .login-box input[type="password"]:focus {
+        border-color: #F4BB29;
+        outline: none;
+      }
+      .login-box button {
+        width: 100%;
+      }
+      .error-msg {
+        color: #cc0000;
+        font-size: 0.9em;
+        margin-top: 0.75em;
+        min-height: 1.4em;
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>egg · 2027</h1>
+      <span class="subtitle">Frankfurt am Main, May 27–30</span>
+      <input type="password" id="pw" placeholder="Password" autocomplete="current-password" />
+      <button type="button" onclick="checkPassword()">Enter</button>
+      <div class="error-msg" id="error-msg" aria-live="polite"></div>
+    </div>
+
+    <script>
+      const HASH = 'f39800781801dfc541bb90c0f7bb3515bd21e35d121ae4d2107549c7eee60d2d';
+
+      if (sessionStorage.getItem('egg_auth') === 'ok') {
+        window.location.replace('index.html');
+      }
+
+      document.getElementById('pw').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') checkPassword();
+      });
+
+      async function checkPassword() {
+        const pw = document.getElementById('pw').value;
+        const err = document.getElementById('error-msg');
+        if (!pw) { err.textContent = 'Please enter the password.'; return; }
+
+        const hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+        const hashHex = [...new Uint8Array(hashBuffer)]
+          .map(b => b.toString(16).padStart(2, '0')).join('');
+
+        if (hashHex === HASH) {
+          sessionStorage.setItem('egg_auth', 'ok');
+          window.location.replace('index.html');
+        } else {
+          err.textContent = 'Sorry, this password did not score in the top 0.1%. Please try again.';
+          document.getElementById('pw').value = '';
+          document.getElementById('pw').focus();
+        }
+      }
+    </script>
+  </body>
+</html>
