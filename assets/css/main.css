@@ -3320,3 +3320,8 @@ table.timetable td.time {
     white-space: nowrap;
     width: 5em;
 }
+
+body:has(.top-bar) {
+    margin: 0;
+    padding: 0;
+}
