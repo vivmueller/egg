@@ -102,7 +102,14 @@
           sessionStorage.setItem('egg_auth', 'ok');
           window.location.replace('index.html');
         } else {
-          err.textContent = 'Sorry, this password did not score in the top 0.1%. Please try again.';
+          const messages = [
+            'This password did not score in the top 0.1%. Please try again.',
+            'Your password appears to be below the required percentile. Try again.',
+            'That egg didn\'t hatch. Try another password.',
+            'This hypothesis was not supported by the data. Try another password.',
+            'That password missed the cutoff. This egg remains uncracked.'
+          ];
+          err.textContent = messages[Math.floor(Math.random() * messages.length)];
           document.getElementById('pw').value = '';
           document.getElementById('pw').focus();
         }
