@@ -377,13 +377,15 @@
 												<span class="image featured" id="navigate"><img src="images/pic01.jpg" alt="" /></span>
 												<h3>Navigate</h3>
 												<p class="address">
-													Address: Kurt-Schumacher-Str. 23,
-													60311 Frankfurt am Main (DE) 
-													|Coordinates: 50.112309, 8.687648|
+													Kurt-Schumacher-Str. 23</p>
+													<p>60311 Frankfurt am Main</p>
+													<p>Germany</p>
+													<p><strong>Coordinates:</strong> 50.112309, 8.687648
 												</p>
 												<ul class="actions">
 													<li><a href="https://maps.app.goo.gl/SDqbVgAqcNruFNm79" class="button large" target="_blank">Google Maps</a></li>
 													<li><a href="https://www.openstreetmap.org/?mlat=50.112309&mlon=8.687648#map=19/50.112309/8.687648" class="button alt large" target="_blank">OpenStreetMap</a></li>
+													<li><a href="https://what3words.com/fakes.insects.mornings" class="button large" style="Background-color: rgb(148, 148, 148)" target="_blank">what3words</a></li>
 												</ul>
 											</section>
 
@@ -395,11 +397,12 @@
 												<span class="image featured" id="public-transport"><img src="images/pic02.jpg" alt="" /></span>
 												<h3>Public transport</h3>
 												<p class="transport-info">										
-													Nearest stops: <br>
-													<strong>Börneplatz</strong> (tram 11, 12, 18; bus 30, M36)
-													and <strong>Konstablerwache</strong> (S1, S2, S5, S6, S8, S9, U4, U5), approximately
-													300m from the venue.<br>
-													<strong>Tickets:</strong>
+													Please buy your ticket before using the public transport. </p>
+													<p>To avoid last-minute stress, we recommend downloading the RMV app <strong>before</strong> your trip and setting it up in advance.</p>
+													<p>Nearest stops: </p>
+													<p> - <strong>Börneplatz</strong>: tram 11, 12, 18; bus 30, M36 </p>
+													<p> - <strong>Konstablerwache</strong> (300m): S1, S2, S5, S6, S8, S9, U4, U5.</p>
+													<p><strong>Tickets:</strong>
 												</p>
 												<ul class="actions">
 													<li><a href="https://www.rmv.de/c/en/shop/app-rmvgo" class="button large" target="_blank">RMVgo App</a></li>
@@ -416,10 +419,10 @@
 												<span class="image featured" id="airport"><img src="images/pic03.jpg" alt="" /></span>
 												<h3>Airport</h3>
 												<p class="airport-info">
-													<strong>FRA Frankfurt Airport</strong> is the nearest airport.<br>
-													The train station is located in the underground level of 
-													<a href="https://map.frankfurt-airport.com/?poi=regionalbahnhof" target="_blank">Terminal 1</a> (Level 0). <br>
-													S-Bahn lines S8 and S9 run every 15 minutes to <strong>Konstablerwache</strong> in ~20 minutes and costs about €7.<br>																												
+													<strong>FRA Frankfurt Airport</strong> is the nearest airport.</p>
+													<p> The train station is located in the underground level of 
+													<a href="https://map.frankfurt-airport.com/?poi=regionalbahnhof" target="_blank">Terminal 1</a> (Level 0). </p>
+													<p> S-Bahn lines S8 and S9 run every 15 minutes to <strong>Konstablerwache</strong> in ~20 minutes and costs about €7.
 												</p>
 											</section>
 
@@ -491,7 +494,7 @@
 
 									<!-- Open Stage -->
 									<div class="col-2 col-12-small">
-										<span class="image featured"><img src="images/fried-egg.jpg" alt="" /></span>
+										<span class="image featured"><img src="images/logo.png" alt="" /></span>
 									</div>
 									<div class="col-4 col-12-small">
 										<h3>Open Stage</h3>
@@ -564,10 +567,8 @@
 									<section class="box feature">
 												<span class="image featured" id="Recycling"><img src="images/bottle-egg.jpg" alt="" /></span>
 												<h3>Recycling</h3>
-												<p>
-													Recycle bottles and cans - do not throw them in the garbage!
-													Try to recycle as much as possible, and use the appropriate bins for paper, plastic, glass, and other materials.
-												</p>
+												<p> Recycle bottles - do not throw them in the garbage! We will have an extra bag for collecting them at the venue.</p>
+												<p> Try to recycle as much as possible, and use the appropriate bins for paper, plastic, glass, and other materials.</p>
 												<ul class="actions">
 													<li><a href="https://www.how-to-germany.com/pfand-in-germany" class="button large" target="_blank">Deposit bottles</a></li>
 													<li><a href="https://www.how-to-germany.com/recycling-in-germany/" class="button alt large" target="_blank">Recycling in Germany</a></li>
@@ -955,6 +956,20 @@
 
 			}, i * 120);
 			}
+		});
+		</script>
+
+	<!-- Easter Egg: ice cream flip -->
+		<script>
+		document.querySelector('#tipping img').addEventListener('click', function() {
+			const img = this;
+			if (img.dataset.flipped) return;
+			img.dataset.flipped = 'true';
+			img.src = 'images/fried-egg.jpg';
+			setTimeout(function() {
+			img.src = 'images/icecream-egg.jpg';
+			delete img.dataset.flipped;
+			}, 250);
 		});
 		</script>
 
