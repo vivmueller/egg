@@ -2076,12 +2076,39 @@ input, select, textarea {
 
 	@media screen and (max-width: 736px) {
 	    ul.calendar-days {
-	        gap: 0.5em;
+	        gap: 0.4em;
 	    }
 	
 	    ul.calendar-days li a {
-	        width: 4.5em;
-	        height: 4.5em;
+	        width: 4em;
+	        height: 4em;
+	    }
+	
+	    ul.calendar-days li a .day-number {
+	        font-size: 1.4em;
+	    }
+	
+	    ul.calendar-days li a .day-name {
+	        font-size: 0.7em;
+	    }
+	}
+	
+	@media screen and (max-width: 480px) {
+	    ul.calendar-days {
+	        gap: 0.3em;
+	    }
+	
+	    ul.calendar-days li a {
+	        width: 3.75em;
+	        height: 3.75em;
+	    }
+	
+	    ul.calendar-days li a .day-number {
+	        font-size: 1.3em;
+	    }
+	
+	    ul.calendar-days li a .day-name {
+	        font-size: 0.65em;
 	    }
 	}
 
