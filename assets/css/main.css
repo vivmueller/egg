@@ -2074,54 +2074,65 @@ input, select, textarea {
 		margin: -1em 0 3em 0;
 	}
 
-		ul.calendar-days li {
-			-moz-transition: top .15s ease-in-out;
-			-webkit-transition: top .15s ease-in-out;
-			-ms-transition: top .15s ease-in-out;
-			transition: top .15s ease-in-out;
-			position: relative;
-			top: 0;
+	@media screen and (max-width: 736px) {
+	    ul.calendar-days {
+	        gap: 0.5em;
+	    }
+	
+	    ul.calendar-days li a {
+	        width: 4.5em;
+	        height: 4.5em;
+	    }
+	}
+
+	ul.calendar-days li {
+		-moz-transition: top .15s ease-in-out;
+		-webkit-transition: top .15s ease-in-out;
+		-ms-transition: top .15s ease-in-out;
+		transition: top .15s ease-in-out;
+		position: relative;
+		top: 0;
+	}
+
+		ul.calendar-days li a {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 5.25em;
+			height: 5.25em;
+			border-radius: 100%;
+			background: #cccccc;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			padding: 0.5em;
+			box-sizing: border-box;
+			transition: background-color .2s ease-in-out, transform .2s ease-in-out;
 		}
 
-			ul.calendar-days li a {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				width: 5.25em;
-				height: 5.25em;
-				border-radius: 100%;
-				background: #cccccc;
-				color: #fff;
-				text-decoration: none;
-				text-align: center;
-				padding: 0.5em;
-				box-sizing: border-box;
-				transition: background-color .2s ease-in-out, transform .2s ease-in-out;
+			ul.calendar-days li a .day-number {
+				font-size: 1.8em;
+				font-weight: 700;
+				line-height: 1;
+				margin-bottom: 0.2em;
 			}
 
-				ul.calendar-days li a .day-number {
-					font-size: 1.8em;
-					font-weight: 700;
-					line-height: 1;
-					margin-bottom: 0.2em;
-				}
-
-				ul.calendar-days li a .day-name {
-					font-size: 0.8em;
-					line-height: 1.1;
-					text-transform: uppercase;
-					letter-spacing: 0.08em;
-				}
-
-			ul.calendar-days li:hover {
-				top: -0.5em;
+			ul.calendar-days li a .day-name {
+				font-size: 0.8em;
+				line-height: 1.1;
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
 			}
 
-				ul.calendar-days li:hover a {
-					background: #bbbbbb;
-					transform: translateY(-2px);
-				}
+		ul.calendar-days li:hover {
+			top: -0.5em;
+		}
+
+			ul.calendar-days li:hover a {
+				background: #bbbbbb;
+				transform: translateY(-2px);
+			}
 
 /* Meta */
 
