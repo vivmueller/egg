@@ -1,8 +1,9 @@
-const CACHE_NAME = 'egg-2027_v2026-08-03_09:10';
+const CACHE_NAME = 'egg-2027_v2026-08-03_09:20';
 const urlsToCache = [
   '/egg/',
   '/egg/index.html',
   '/egg/impressum.html',
+  '/egg/login.html',
   '/egg/assets/css/main.css',
   '/egg/assets/js/jquery.min.js',
   '/egg/assets/js/jquery.dropotron.min.js',
