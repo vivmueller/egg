@@ -2298,24 +2298,15 @@ input, select, textarea {
 		}
 
 	.box.feature {
-		text-align: center;
+		text-align: left;
+		line-height: 1.4;
 	}
-
-	.box.feature .address {
-		margin-bottom: 0.5em;
-	}
-
-	.box.feature .transport-info {
-		margin-bottom: 0.5em;
-	}
-
-	.box.feature .airport-info,
-	.box.feature .parking-info {
-		margin-bottom: 0.5em;
+		.box.feature p {
+		margin-bottom: 0.35em;
 	}
 
 	.box.feature ul.actions {
-		margin: 0;
+		margin-top: 1em;
 	}
 
 		.box.feature ul.actions li {
