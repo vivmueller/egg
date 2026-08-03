@@ -1,4 +1,4 @@
-const CACHE_NAME = 'egg-2027_v2026-08-03_09:35';
+const CACHE_NAME = 'egg-2027_v2026-08-03_11:35';
 const urlsToCache = [
   '/egg/',
   '/egg/index.html',
@@ -13,7 +13,11 @@ const urlsToCache = [
   '/egg/assets/js/util.js',
   '/egg/assets/js/main.js',
   '/egg/icons/icon-192.png',
-  '/egg/icons/icon-512.png'
+  '/egg/icons/icon-512.png',
+  '/egg/days/thursday.html',
+  '/egg/days/friday.html',
+  '/egg/days/saturday.html',
+  '/egg/days/sunday.html'
 ];
 
 // Install event - cache essential files
