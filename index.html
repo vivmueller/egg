@@ -42,8 +42,7 @@
 						<li class="current">
 							<a href="#">Menu</a>
 							<ul>
-								<li><a href="#important-information">Important information ℹ︎ </a></li>
-
+								<li><a href="#important-information">Important information</a></li>
 								<li><a href="#venue">Venue & City</a></li>
 								<li><a href="#getting-there">Getting there</a></li>							
 								<li><a href="#programme">Programme</a></li>
@@ -122,8 +121,7 @@
 							<div class="col-12">
 
 					<!-- Highlight -->		
-					<section class="box highlight"> <!--DO NOT ADD CLOSING SECTION HERE	-->
-
+					<section class="box highlight">
 
 						<!-- Weather -->								
 							<section id="weather-section" aria-label="Weather forecast">
@@ -579,9 +577,9 @@
 									<!-- Recycling -->
 									<div class="col-3 col-6-medium col-12-small">								
 									<section class="box feature">
-												<span class="image featured" id="Recycling"><img src="images/bottle-egg.jpg" alt="" /></span>
+												<span class="image featured" id="Recycling"><img src="images/bottle.png" alt="" /></span>
 												<h3>Recycling</h3>
-												<p> Recycle bottles - do not throw them in the garbage! We will have an extra bag for collecting them at the venue.</p>
+												<p> Recycle deposit bottles (see logo) - do not throw them in the garbage! We will have an extra bag for collecting them at the venue.</p>
 												<p> Try to recycle as much as possible, and use the appropriate bins for paper, plastic, glass, and other materials.</p>
 												<ul class="actions">
 													<li><a href="https://www.how-to-germany.com/pfand-in-germany" class="button large" target="_blank">Deposit bottles</a></li>
@@ -593,11 +591,13 @@
 									<!-- Restaurants & Tipping -->
 									<div class="col-3 col-6-medium col-12-small">									
 									<section class="box feature">
-												<span class="image featured" id="tipping"><img src="images/icecream-egg.jpg" alt="" /></span>
+												<span class="image featured" id="tipping"><img src="images/fried-egg.jpg" alt="" /></span>
 												<h3>Restaurants & Tipping</h3>
 												<p class="tipping-info">
-													In Germany, restaurant bills are usually paid individually, with each person paying for their own food and drinks.<br> 
-													For good service, it is customary to leave a small tip of around 5–10%.
+													Restaurant bills are usually paid individually, with each person paying for their own food and drinks.<br> 
+													It is customary to tip around 5-10% by rounding up the bill and telling the server the total amount you wish to pay, 
+													rather than leaving money on the table.</p>
+													<p>Please note that some restaurants in Germany accept cash only and do not take credit cards.
 												</p>
 									</section>
 									</div>
@@ -605,7 +605,7 @@
 									<!-- Tax free -->
 									<div class="col-3 col-6-medium col-12-small">						
 									<section class="box feature">
-												<span class="image featured" id="Tax free"><img src="images/taxfree-egg.jpg" alt="" /></span>
+												<span class="image featured" id="Tax free"><img src="images/taxfree.png" alt="" /></span>
 												<h3>Tax Free Shopping</h3>
 												<p>
 													Enjoy tax-free shopping in Germany. Bring your passport and purchase items 
@@ -620,7 +620,7 @@
 									<!-- Schengen visa -->
 									<div class="col-3 col-6-medium col-12-small">									
 									<section class="box feature">
-												<span class="image featured" id="Schengen visa"><img src="images/passport-egg.jpg" alt="" /></span>
+												<span class="image featured" id="Schengen visa"><img src="images/Pass.png" alt="" /></span>
 												<h3>Do you need a visa?</h3>
 												<p>
 													Citizens of visa-waiver countries can stay in Germany for up to 90 days without a visa. <br>
@@ -938,6 +938,8 @@
 				});
 			</script>	
 
+	
+
 	<!-- Easter Egg: Ben Gunn cheese rain -->
 		<script>
 		document.querySelector('img[src="images/BenGunn.jpg"]').addEventListener('click', function() {
@@ -979,19 +981,62 @@
 		});
 		</script>
 
-	<!-- Easter Egg: ice cream flip -->
+	<!-- Map Overlay -->
+		
+		<div id="map-overlay" style="
+			display: none;
+			position: fixed;
+			inset: 0;
+			z-index: 99999;
+			background: rgba(0,0,0,0.85);
+			align-items: flex-start;
+			justify-content: center;
+			padding: 1em;
+		" onclick="closeMapOverlay(event)">
+			<div style="position: relative; width: 95vw; max-height: 92vh; overflow: auto; -webkit-overflow-scrolling: touch;">
+				<div style="display: flex; justify-content: flex-end; margin-bottom: 0.4em;">
+					<button onclick="document.getElementById('map-overlay').style.display='none'" style="
+						width: 2.25em;
+						height: 2.25em;
+						min-width: 2.25em;
+						padding: 0;
+						border-radius: 50%;
+						background: #F4BB29;
+						color: #fff;
+						font-size: 1.1em;
+						font-weight: 700;
+						border: none;
+						cursor: pointer;
+						line-height: 1;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					">✕</button>
+				</div>
+				<img src="images/map.jpg" alt="Venue map" style="
+					display: block;
+					width: 100%;
+					min-width: 600px;
+					border-radius: 8px;
+				"/>
+			</div>
+		</div>
+		
+
 		<script>
-		document.querySelector('#tipping img').addEventListener('click', function() {
-			const img = this;
-			if (img.dataset.flipped) return;
-			img.dataset.flipped = 'true';
-			img.src = 'images/fried-egg.jpg';
-			setTimeout(function() {
-			img.src = 'images/icecream-egg.jpg';
-			delete img.dataset.flipped;
-			}, 250);
-		});
+			function closeMapOverlay(e) {
+				if (e.target === document.getElementById('map-overlay')) {
+					document.getElementById('map-overlay').style.display = 'none';
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelector('#navigate img').addEventListener('click', function() {
+					document.getElementById('map-overlay').style.display = 'flex';
+				});
+			});
 		</script>
+
 
 	<!-- Register Service Worker -->
 			<script>
