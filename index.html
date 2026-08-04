@@ -72,7 +72,10 @@
 						<!-- Countdown -->
 						<a href="#" class="button scrolly" id="countdownBtn" aria-live="polite" onclick="showEasterEgg(); return false;">T - loading...</a>
 						<script>
+							let easterEggActive = false;
+
 							function updateCountdown() {
+								if (easterEggActive) return;
 								const eventDate = new Date("2027-05-27T10:00:00+02:00");
 								const now = new Date();
 								const diff = Math.max(0, eventDate - now);
@@ -84,7 +87,24 @@
 
 								const pad = value => String(value).padStart(2, "0");
 								document.getElementById("countdownBtn").textContent =
-									`T - ${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+								`T - ${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+							}
+
+							function showEasterEgg() {
+								if (easterEggActive) return;
+								easterEggActive = true;
+
+								const eventDate = new Date("2027-05-27T10:00:00+02:00");
+								const now = new Date();
+								const totalSeconds = Math.floor(Math.max(0, eventDate - now) / 1000);
+
+								document.getElementById("countdownBtn").textContent =
+								`T - ${totalSeconds.toLocaleString()} seconds`;
+
+								setTimeout(function() {
+								easterEggActive = false;
+								updateCountdown();
+								}, 3000);
 							}
 
 							updateCountdown();
@@ -298,10 +318,9 @@
 													</header>
 													<span class="image featured"><img src="images/pic05.jpg" alt="" /></span>
 													<p>
-														Located in the heart of Frankfurt, the venue is surrounded by numerous hotels, restaurants and cafés, not far from the Zeil (main shopping street).<br>
-														Börneplatz tram stop is just around the corner, while Konstablerwache, one of the city's main transport hubs, 
-														is only a short 300 m walk away.</p>
-													<p>For participants who wish to stay close to the venue, we have reserved a number of rooms at the Spenerhaus Hotel, located directly next to the Dominikanerkloster. 
+														Centrally located and easy to reach by public transport, the Dominikanerkloster provides a large hall, a dining hall, a private courtyard, 
+														and a range of smaller rooms, offering flexible space for talks, socialising, games, and other activities.</p>
+													<p>For participants who wish to stay close to the venue, we have reserved a number of rooms at the Spenerhaus Hotel, located nearby. 
 														These rooms are available at a special reduced rate. Of course, this is merely an offer and not an obligation.<br>
 														Frankfurt provides plenty of alternative accommodation options across all price ranges.</p>
 													<a href="https://dsc.3090.eu/t/hotel-reservation-links-for-the-spenerhaus-hotel/773" class="button">Voucher for Spenerhaus hotel</a>
@@ -530,8 +549,8 @@
 									</div>
 									<div class="col-4 col-12-small">
 										<h3>Ben-Gunn Reception</h3>
-										<p>I (i.e. Thorsten) was quite shocked a while ago when I was asked TWICE why the “Benn Gunn”-Reception was called the 
-											 “Benn Gunn”-Reception.</p>
+										<p>I (i.e. Thorsten) was quite shocked a while ago when I was asked TWICE why the “Ben Gunn”-Reception was called the 
+											 “Ben Gunn”-Reception.</p>
 										<p>Honestly, I never even considered that there could be anyone who hasn't heard of Ben Gunn and his 
 											 importance for the egg-meeting. In order to avoid similarly embarassing scenes in the future, I thought I'd add 
 											 some information. </p>
@@ -888,30 +907,36 @@
 			</script>
 		</div>
 
-	<!-- Easter Egg: countdown click -->
-		<script>
-		function showEasterEgg() {
-			const overlay = document.createElement('div');
-			overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+		<!-- Weather Modal -->
+			<div id="weather-modal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; padding:1em;">
+				<div style="background:#fff; border-radius:10px; width:90%; max-width:700px; overflow:hidden; box-shadow:0 2em 4em rgba(0,0,0,0.4);">
+					<div style="background:#F4BB29; padding:0.75em 1.25em; display:flex; align-items:center; justify-content:space-between;">
+						<span style="font-family:'Ubuntu',sans-serif; font-weight:700; font-size:1.1em; color:#000;">Weather forecast next 8 days</span>
+						<button onclick="document.getElementById('weather-modal').style.display='none'" style="background:none; border:none; font-size:1.6em; font-weight:700; color:#000; cursor:pointer; line-height:1; padding:0; width:auto;">✕</button>
+					</div>
+					<iframe id="weather-iframe" src="https://www.yr.no/en/content/2-2925533/table.html?mode=light" style="width:100%; height:506px; border:0; border-radius:0;" title="Weather forecast for the next 8 days"></iframe>
+				</div>
+			</div>
+		
+			<script>
+				document.getElementById('weather-widget').addEventListener('click', function() {
+					var modal = document.getElementById('weather-modal');
+					var iframe = document.getElementById('weather-iframe');
+					var titleBarHeight = 54;
+					var padding = 32;
+					var available = window.innerHeight * 1.5 - titleBarHeight;
+					iframe.style.height = Math.min(506, available) + 'px';
+					modal.style.display = 'flex';
+				});
 
-			const video = document.createElement('video');
-			video.src = 'images/happy-Easter-egg.mp4';
-			video.autoplay = true;
-			video.style.cssText = 'max-width:90%;max-height:90vh;border-radius:12px;';
+				document.getElementById('weather-modal').addEventListener('click', function(e) {
+					if (e.target === this) this.style.display = 'none';
+				});
 
-			function dismiss() {
-			if (document.body.contains(overlay)) {
-				document.body.removeChild(overlay);
-			}
-			}
-
-			video.addEventListener('ended', dismiss);
-			overlay.addEventListener('click', dismiss);
-
-			overlay.appendChild(video);
-			document.body.appendChild(overlay);
-		}
-		</script>
+				document.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') document.getElementById('weather-modal').style.display = 'none';
+				});
+			</script>	
 
 	<!-- Easter Egg: Ben Gunn cheese rain -->
 		<script>
