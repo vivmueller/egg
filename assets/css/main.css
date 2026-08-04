@@ -3214,6 +3214,11 @@ input, select, textarea {
 						font-size: 1.25em;
 					}
 
+		/* Weather widget */
+		#weather-widget {
+		    cursor: pointer;
+		}
+		
 		/* Main */
 
 			#main {
