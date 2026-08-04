@@ -1781,6 +1781,12 @@ input, select, textarea {
 				float: none;
 			}
 		}
+		/* Venue featured image */
+		@media (max-width: 768px) {
+			#venue .image.featured {
+				width: 90% !important;
+			}
+		}
 
 /* Button */
 
@@ -2055,6 +2061,11 @@ input, select, textarea {
 		font-size: 0.95em;
 		line-height: 1.4;
 		color: #6b7770;
+	}
+
+	#weather-widget,
+	#weather-widget * {
+		cursor: pointer !important;
 	}
 
 	.weather-line {
@@ -3214,11 +3225,7 @@ input, select, textarea {
 						font-size: 1.25em;
 					}
 
-		/* Weather widget */
-		#weather-widget {
-		    cursor: pointer;
-		}
-		
+
 		/* Main */
 
 			#main {
