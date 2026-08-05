@@ -1,6 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script>
+		if (sessionStorage.getItem('egg_auth') !== 'ok') {
+			window.location.replace('../login.html');
+		}
+	</script>
 	<title>egg ‧ 2027 — Sunday</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />

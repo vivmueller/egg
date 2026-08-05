@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+      if (sessionStorage.getItem('egg_auth') !== 'ok') {
+          window.location.replace('../login.html');
+      }
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impressum and Privacy Policy</title>
