@@ -100,7 +100,7 @@ input, select, textarea {
 	body, input, textarea, select {
 		font-family: 'Open Sans', sans-serif;
 		font-weight: 400;
-		color: #6b7770;
+		color: #707070;
 		font-size: 13pt;
 		line-height: 2em;
 	}
@@ -108,7 +108,7 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 700;
-		color: #6b7770;
+		color: #707070;
 		margin: 0 0 0.5em 0;
 		line-height: 1.3;
 	}
@@ -156,7 +156,7 @@ input, select, textarea {
 
 	b, strong {
 		font-weight: 700;
-		color: #777777;
+		color: #707070;
 	}
 
 	i, em {
@@ -2060,7 +2060,7 @@ input, select, textarea {
 	#weather-widget {
 		font-size: 0.95em;
 		line-height: 1.4;
-		color: #6b7770;
+		color: #707070;
 	}
 
 	#weather-widget,
@@ -2176,7 +2176,7 @@ input, select, textarea {
 
 	ul.meta {
 		font-size: 0.85em;
-		color: #a1aaa5;
+		color: #aaaaaa;
 		list-style: none;
 		padding-left: 0;
 	}
@@ -2237,7 +2237,7 @@ input, select, textarea {
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 700;
 		text-transform: uppercase;
-		color: #6b7770;
+		color: #707070;
 	}
 
 	form input[type="text"],
@@ -2322,7 +2322,7 @@ input, select, textarea {
 				font-family: 'Open Sans Condensed', sans-serif;
 				font-weight: 700;
 				text-transform: uppercase;
-				color: #6b7770;
+				color: #707070;
 			}
 
 			table.default thead {
@@ -2552,7 +2552,7 @@ input, select, textarea {
 				position: relative;
 				display: block;
 				text-decoration: none;
-				color: #6b7770;
+				color: #707070;
 				top: -6px;
 				padding: 6px 1.5em 0.25em 1.5em;
 				border-bottom-left-radius: 6px;
@@ -2581,7 +2581,7 @@ input, select, textarea {
 
 	.dropotron {
 		list-style: none;
-		background: #6B7770;
+		background: #707070;
 		color: #fff;
 		border-radius: 6px;
 		line-height: 2.75em;
@@ -2609,12 +2609,12 @@ input, select, textarea {
 
 			.dropotron li:hover > a, .dropotron li:hover > span {
 				color: #fff;
-				background: #7B8780;
+				background: #808080;
 			}
 
 			.dropotron li.active > a, .dropotron li.active > span {
 				color: #fff;
-				background: #7B8780;
+				background: #808080;
 			}
 
 			.dropotron li:first-child {
@@ -2632,7 +2632,7 @@ input, select, textarea {
 				left: 50%;
 				margin-left: -1em;
 				top: -0.65em;
-				border-bottom: solid 1em #6B7770;
+				border-bottom: solid 1em #707070;
 				border-left: solid 1em transparent;
 				border-right: solid 1em transparent;
 			}
@@ -2680,7 +2680,7 @@ input, select, textarea {
 				transition: border-color .2s ease-in-out, color .2s ease-in-out;
 				color: #eeeeee;
 				background: transparent !important;
-				border: solid 4px #575d59;
+				border: solid 4px #585858;
 				border-color: rgba(244, 186, 41);
 				font-size: 1.5em;
 			}
@@ -2692,7 +2692,7 @@ input, select, textarea {
 
 				#banner .content .button:active {
 					color: #fff;
-					border-color: #616763;
+					border-color: #616161;
 				}
 
 /* Main */
@@ -2743,7 +2743,7 @@ input, select, textarea {
 		background: #e7eae8;
 		padding: 0.75em 2em 0.75em 2em;
 		border-radius: 8px;
-		color: #8b9790;
+		color: #909090;
 		margin: 4em 0 0 0;
 	}
 
@@ -3017,7 +3017,7 @@ input, select, textarea {
 				top: 0;
 				width: 275px;
 				z-index: 10002;
-				background-color: #353c37;
+				background-color: #383838;
 				background-image: url("images/overlay.png"), -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 				background-image: url("images/overlay.png"), -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 				background-image: url("images/overlay.png"), -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
