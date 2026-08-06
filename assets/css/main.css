@@ -2347,6 +2347,7 @@ input, select, textarea {
 			margin: 0 0 1.5em 0;
 		}
 
+
 	.box.feature {
 		text-align: left;
 		line-height: 1.4;
@@ -2800,6 +2801,14 @@ input, select, textarea {
 
 			.box.highlight header > p {
 				font-size: 1.25em;
+			}
+
+			#important-information-content {
+				text-align: left;
+			}
+
+			#important-information-content p {
+				margin-bottom: 0.75em;
 			}
 
 			.box.post h3 {

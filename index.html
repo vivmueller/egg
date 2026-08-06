@@ -938,7 +938,16 @@
 				});
 			</script>	
 
-	
+	<!-- Show map -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				document.querySelector('#navigate img').addEventListener('click', function() {
+					var mapTab = window.open('', '_blank');
+					mapTab.document.write('<html><head><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10"/><title>Venue Map</title><style>body{margin:0;background:#000;display:flex;flex-direction:column;align-items:center;}button{position:fixed;top:0.75em;right:0.75em;width:2.25em;height:2.25em;border-radius:50%;background:#F4BB29;color:#fff;font-size:1.1em;font-weight:700;border:none;cursor:pointer;}img{width:100%;display:block;}</style></head><body><button onclick="window.close()">✕</button><img src="' + window.location.origin + '/egg/images/map.jpg' + '"/></body></html>');
+					mapTab.document.close();
+				});
+			});
+		</script>
 
 	<!-- Easter Egg: Ben Gunn cheese rain -->
 		<script>
@@ -980,63 +989,6 @@
 			}
 		});
 		</script>
-
-	<!-- Map Overlay -->
-		
-		<div id="map-overlay" style="
-			display: none;
-			position: fixed;
-			inset: 0;
-			z-index: 99999;
-			background: rgba(0,0,0,0.85);
-			align-items: flex-start;
-			justify-content: center;
-			padding: 1em;
-		" onclick="closeMapOverlay(event)">
-			<div style="position: relative; width: 95vw; max-height: 92vh; overflow: auto; -webkit-overflow-scrolling: touch;">
-				<div style="display: flex; justify-content: flex-end; margin-bottom: 0.4em;">
-					<button onclick="document.getElementById('map-overlay').style.display='none'" style="
-						width: 2.25em;
-						height: 2.25em;
-						min-width: 2.25em;
-						padding: 0;
-						border-radius: 50%;
-						background: #F4BB29;
-						color: #fff;
-						font-size: 1.1em;
-						font-weight: 700;
-						border: none;
-						cursor: pointer;
-						line-height: 1;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-					">✕</button>
-				</div>
-				<img src="images/map.jpg" alt="Venue map" style="
-					display: block;
-					width: 100%;
-					min-width: 600px;
-					border-radius: 8px;
-				"/>
-			</div>
-		</div>
-		
-
-		<script>
-			function closeMapOverlay(e) {
-				if (e.target === document.getElementById('map-overlay')) {
-					document.getElementById('map-overlay').style.display = 'none';
-				}
-			}
-
-			document.addEventListener('DOMContentLoaded', function() {
-				document.querySelector('#navigate img').addEventListener('click', function() {
-					document.getElementById('map-overlay').style.display = 'flex';
-				});
-			});
-		</script>
-
 
 	<!-- Register Service Worker -->
 			<script>
