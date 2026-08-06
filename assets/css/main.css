@@ -2803,14 +2803,6 @@ input, select, textarea {
 				font-size: 1.25em;
 			}
 
-			#important-information-content {
-				text-align: left;
-			}
-
-			#important-information-content p {
-				margin-bottom: 0.75em;
-			}
-
 			.box.post h3 {
 				font-size: 2.5em;
 			}
